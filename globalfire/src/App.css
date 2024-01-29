@@ -28,24 +28,18 @@ body{
   color: white;
 }
 
-.logoAnimation {
-  position: fixed;
-  top: calc(50vh - 26vw);
-  bottom: calc(50vh - 26vw);
-  left: calc(50% - 16vw);
-  right: calc(50% - 16vw);
-  /* z-index: -1; */
-  opacity: 1;
+#NeilArmstrong{
+    height: 700px;
+    width: 500px;
 }
 
-.fixed-centre {
+.model-container {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
 }
-
 
 .App-link {
   color: #61dafb;

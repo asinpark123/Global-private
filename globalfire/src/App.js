@@ -1,10 +1,10 @@
 import logo from './logo.svg';
-// import neilArmstrong from 'https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb';
+// import cursorJS from './cursor.js'
 import {Helmet} from 'react-helmet'
 // import globalFireLogo from "./logo/GlobalFire_orange_fire.glb";
 
 import './App.css';
-
+import './cursor.css';
 
 function Header() {
   return (
@@ -22,16 +22,19 @@ function Header() {
 
 function NeilArmstrong() {
   return (
-    <div>
+    <div id="container">
       <Helmet>
         <script
           type="module"
           src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
         ></script>
       </Helmet>
-
-      <div className="fixed-centre">
+      {/* <Helmet>
+        <script src={cursorJS}></script>
+      </Helmet> */}
+      <div className="model-container">
         <model-viewer
+          id="NeilArmstrong"
           src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb"
           auto-rotate
           auto-rotate-delay="0"
@@ -43,43 +46,18 @@ function NeilArmstrong() {
           ar-status="not-presenting"
         ></model-viewer>
       </div>
+      <canvas></canvas>
     </div>
   );
 }
-
-// function MetalBall() {
-//   return (
-//     <div>
-//       <Helmet>
-//         <script
-//           type="module"
-//           src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
-//         ></script>
-//       </Helmet>
-
-//       <div className="fixed-centre">
-//         <model-viewer
-//           src="https://modelviewer.dev/shared-assets/models/reflective-sphere.gltf"
-//           auto-rotate
-//           auto-rotate-delay="0"
-//           rotation-per-second="30deg"
-//           environment-image="https://neromotion.co.nz/assets/Uploads/test14.jpeg"
-//           metalness="1"
-//           roughness="0"
-//           ar-status="not-presenting"
-//         ></model-viewer>
-//       </div>
-//     </div>
-//   );
-// }
 
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      
+      {/* <Header /> */}
       <NeilArmstrong />
-      {/* <MetalBall /> */}
     </div>
   );
 }
