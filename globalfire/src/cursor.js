@@ -23,7 +23,7 @@ let config = {
   BLOOM: true,
   BLOOM_ITERATIONS: 8,
   BLOOM_RESOLUTION: 1024,
-  BLOOM_INTENSITY: 0.8,
+  BLOOM_INTENSITY: .8,
   BLOOM_THRESHOLD: 0.6,
   BLOOM_SOFT_KNEE: 0.7,
   SUNRAYS: false,
@@ -747,9 +747,9 @@ function splat(x, y, dx, dy, color) {
     gl.uniform1i(splatProgram.uniforms.uTarget, density.read[2]);
     gl.uniform3f(
     splatProgram.uniforms.color,
-    color[0] * 0.3,
-    color[1] * 0.3,
-    color[2] * 0.3
+    color[0] * 0.2,
+    color[1] * 0.2,
+    color[2] * 0.2
     );
     blit(density.write[1]);
     density.swap();
