@@ -1,74 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="cursor.css">
-    <!-- <link rel="stylesheet" href="FluidAnimation.css"> -->
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cursor Demo</title>
+        <link rel="stylesheet" href="demo.css">
+    </head>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
-<style>
-    body{
-        background-color: black;
-        color: white;
-        width: 100vw;
-        height: 200vh;
-    }
-
-    .heading{
-        text-align: center;
-        color: white;
-        font-weight: 700;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    .centre{
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-    }
-
-    .footer{
-        position: fixed;
-        right: 20px;
-        bottom: 0%;
-    }
-
-    #logo3d{
-        height: 700px;
-        width: 500px;
-    }
-
-    canvas{
-        opacity: 0.6;
-    }
-</style>
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-
-
-<body>
-    <div class="container" id='container'>
-        <div class="heading">
-            <h1>GlobalFire 3D Logo Demo</h1>
-        </div>
-        <div class='centre'>
-            <!-- <model-viewer camera-controls="" touch-action="pan-y" alt="A 3D model of a sphere" src="https://modelviewer.dev/shared-assets/models/reflective-sphere.gltf" ar-status="not-presenting">
+    <body>
+        <div class='logo3D'>
+            <!-- <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_orange_fire.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="https://neromotion.co.nz/assets/Uploads/test14.jpeg" metalness="1" roughness="0" exposure="60" ar-status="not-presenting">
             </model-viewer> -->
-            <model-viewer id="logo3d" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_orange_fire.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="https://neromotion.co.nz/assets/Uploads/test14.jpeg" metalness="1" roughness="0" exposure="50" ar-status="not-presenting">
+            <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./logo/BG_v2.png" metalness="1" roughness="0" exposure="100" ar-status="not-presenting">
             </model-viewer>
         </div>
-        <canvas id="fluid"></canvas>
-    </div>
-    <div class="footer">
-        <h5>By: Ah Shin Park</h5>
-    </div>
-</body>
-
-<!-- <script src="./FluidAnimation.js"></script> -->
-<script src="./cursor.js"></script>
+        <div class='container textCenter'>
+            <!-- <h1 class='a-title'>Move the mouse</h1> -->
+            <div>
+                <h2 class='title'>See the magic</h2>
+                <p class='title'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi, ipsum fugiat maxime hic unde voluptate quod animi adipisci fuga tempora reiciendis aliquid sequi voluptas expedita repellat dolores aspernatur iste.</p>
+            </div>
+            <div>
+                <h2 class='title'>See the magic</h2>
+                <p class='title'>rando text</p>
+            </div>
+            <div>
+                <h2 class='title'>See the magic</h2>
+                <p class='title'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi, ipsum fugiat maxime hic unde voluptate quod animi adipisci fuga tempora reiciendis aliquid sequi voluptas expedita repellat dolores aspernatur iste.</p>
+            </div>
+            <div>
+                <h2 class='title'>See the magic</h2>
+                <p class='title'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi, ipsum fugiat maxime hic unde voluptate quod animi adipisci fuga tempora reiciendis aliquid sequi voluptas expedita repellat dolores aspernatur iste.</p>
+            </div>
+            <canvas></canvas>
+        </div>
+        <script src="cursor.js"></script>
+    </body>
 
 </html>
-

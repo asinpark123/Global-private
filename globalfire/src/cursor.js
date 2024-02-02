@@ -11,8 +11,8 @@ let config = {
   //PRESSURE: 99,
   PRESSURE_DISSIPATION: 0,
   PRESSURE_ITERATIONS: 25,
-  CURL: 2,
-  SPLAT_RADIUS: 0.001,
+  CURL: 50,
+  SPLAT_RADIUS: 0.0005,
   SPLAT_FORCE: 10,
   SHADING: true,
   //COLORFUL: true,
@@ -23,7 +23,7 @@ let config = {
   BLOOM: true,
   BLOOM_ITERATIONS: 8,
   BLOOM_RESOLUTION: 1024,
-  BLOOM_INTENSITY: .8,
+  BLOOM_INTENSITY: .5,
   BLOOM_THRESHOLD: 0.6,
   BLOOM_SOFT_KNEE: 0.7,
   SUNRAYS: false,
@@ -747,8 +747,8 @@ function splat(x, y, dx, dy, color) {
     gl.uniform1i(splatProgram.uniforms.uTarget, density.read[2]);
     gl.uniform3f(
     splatProgram.uniforms.color,
-    color[0] * 0.2,
-    color[1] * 0.2,
+    color[0] * 0.8,
+    color[1] * 0.6,
     color[2] * 0.2
     );
     blit(density.write[1]);
