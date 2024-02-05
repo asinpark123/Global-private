@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cursor Demo</title>
         <link rel="stylesheet" href="demo.css">
+        <!-- Locomotive Scroll 4.14 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     </head>
 
     <body>
@@ -14,62 +16,64 @@
             <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./logo/BG_v2.png" metalness="1" roughness="0" exposure="100" ar-status="not-presenting">
             </model-viewer>
         </div>
-        <div class='container'>
-            <header>
-                <div class="header">
-                    <div class="logo">
-                        <img src="https://www.globalfire.co.nz/static/media/fire_logo_noshadow.9b62e872.svg" alt="Global Fire Logo">
-                    </div>
-                    <div class="navbar">
-                        <ul>
-                            <li><a href="#Home">Home</a></li>
-                            <li><a href="#About Us">About Us</a></li>
-                            <li><a href="#Services">Services</a></li>
-                            <li><a href="#Passive Pro">Passive Pro</a></li>
-                            <li><a href="#Projects">Projects</a></li>
-                            <li><a href="#Team">Team</a></li>
-                            <li><a href="#Group">Group</a></li>
-                            <li><a href="#Contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
-            <section class="textCenter">
+        <header class="header" onscroll="navbarChange()">
+            <div class="logo">
+                <img src="https://www.globalfire.co.nz/static/media/fire_logo_noshadow.9b62e872.svg" alt="Global Fire Logo">
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About Us">About Us</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#Passive Pro">Passive Pro</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Team">Team</a></li>
+                    <li><a href="#Group">Group</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class='container' data-scroll-container>
+            <section class="textCenter" data-scroll-section>
                 <div>
-                    <h2 class='title' data-scroll>Market leaders in Passive Fire Protection</h2>
+                    <h2 class='title' data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" data-scroll-class="appear" data-scroll-repeat="true">Market leaders in Passive Fire Protection</h2>
                 </div>
                 <div>
-                    <h2 class='title' data-scroll>Compliant Solutions Guaranteed</h2>
+                    <h2 data-scroll data-scroll-speed="-1" class='title' data-scroll>Compliant Solutions Guaranteed</h2>
                 </div>
             </section>
 
-            <section class="textCenter">
-                <div>
+            <section class="textCenter" data-scroll-section>
+                <div data-scroll>
                     <h2 class="section-title">About Us</h2>
                 </div>
-                <div>
-                    <h2 class='title' data-scroll>Global Fire are specialists in fire safety and protection</h2>
+                <div data-scroll>
+                    <h2 class='title'>Global Fire are specialists in fire safety and protection</h2>
                 </div>
-                <div>
-                    <h2 class='title' data-scroll>Compliant Solutions Guaranteed</h2>
+                <div data-scroll>
+                    <h2 class='title'>Compliant Solutions Guaranteed</h2>
                 </div>
             </section>
-            <div>
-                <h2 class='title'>See the magic</h2>
-                <p class='title'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi, ipsum fugiat maxime hic unde voluptate quod animi adipisci fuga tempora reiciendis aliquid sequi voluptas expedita repellat dolores aspernatur iste.</p>
-            </div>
-            <div>
-                <h2 class='title'>See the magic</h2>
-                <p class='title'>rando text</p>
-            </div>
-            <div>
-                <h2 class='title'>See the magic</h2>
-                <p class='title'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi, ipsum fugiat maxime hic unde voluptate quod animi adipisci fuga tempora reiciendis aliquid sequi voluptas expedita repellat dolores aspernatur iste.</p>
-            </div>
+            <section data-scroll-section>
+                <h2 class='title' data-scroll>See the magic</h2>
+                <p class='title' data-scroll>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi, ipsum fugiat maxime hic unde voluptate quod animi adipisci fuga tempora reiciendis aliquid sequi voluptas expedita repellat dolores aspernatur iste.</p>
+            </section>
+            <section data-scroll-section>
+                <h2 class='title' data-scroll>See the magic</h2>
+                <p class='title' data-scroll>rando text</p>
+            </section>
+            <section data-scroll-section>
+                <h2 class='title' data-scroll>See the magic</h2>
+                <p class='title' data-scroll>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi, ipsum fugiat maxime hic unde voluptate quod animi adipisci fuga tempora reiciendis aliquid sequi voluptas expedita repellat dolores aspernatur iste.</p>
+            </section>
+            <canvas></canvas>
         </div>
-        <canvas></canvas>
+        <script src="demo.js"></script>
         <script src="cursor.js"></script>
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+        <!-- Locomotive Scroll v4.14 -->
+        <script src="locomotive-scroll.min.js"></script>
+
     </body>
 
 </html>
