@@ -6,6 +6,7 @@ const scroller = new LocomotiveScroll({
 function navbarChange(){
     const header = document.querySelector("header");
     const navbar = document.querySelector("nav");
+    const logo = document.querySelector("#logo");
     let y = header.scrollTop();
     
     if (y > 0){
@@ -14,6 +15,9 @@ function navbarChange(){
 
         navbar.classList.add("navbar-flat");
         navbar.classList.remove("navbar");
+        
+        logo.classList.add("logo-flat");
+        logo.classList.remove("logo");
     }
     else if (y <= 10){
         header.classList.add("header");
@@ -21,5 +25,8 @@ function navbarChange(){
 
         navbar.classList.add("navbar");
         navbar.classList.remove("navbar-flat");
-}
+
+        logo.classList.add("logo");
+        logo.classList.remove("logo-flat");
+    }
 }
