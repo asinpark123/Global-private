@@ -16,9 +16,9 @@
             <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./logo/BG_v2.png" metalness="1" roughness="0" exposure="100" ar-status="not-presenting">
             </model-viewer>
         </div>
-        <header class="header" onscroll="navbarChange()">
+        <header onscroll="updateY()" class="header">
             <div id="logo" class="logo">
-                <img src="https://www.globalfire.co.nz/static/media/fire_logo_noshadow.9b62e872.svg" alt="Global Fire Logo">
+                <img src="./logo/fire_logo.svg" alt="Global Fire Logo">
             </div>
             <nav class="navbar">
                 <ul>
@@ -34,7 +34,7 @@
             </nav>
         </header>
         <div class='container' data-scroll-container>
-            <section class="textCenter" data-scroll-section>
+            <section id="section1" class="textCenter" data-scroll-section>
                 <div>
                     <h2 class='title' data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" data-scroll-class="appear" data-scroll-repeat="true">Market leaders in Passive Fire Protection</h2>
                 </div>
@@ -68,8 +68,9 @@
             </section>
             <canvas></canvas>
         </div>
-        <script src="demo.js"></script>
+        
         <script src="cursor.js"></script>
+        <!-- <script src="demo.js"></script> -->
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
         <!-- Locomotive Scroll v4.14 -->
         <script src="locomotive-scroll.min.js"></script>
