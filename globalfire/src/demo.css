@@ -2,27 +2,41 @@ html,
 body {
     /* overflow: hidden; */
 }
-
+.textCenter{
+    text-align: center;
+}
+#model3D{
+    height: 700px;
+    width: 500px;
+    }
+.logo3D{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
 body {
     margin: 0;
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif !important;
+    background-color: #2D2D2D;
+    font-family: "Manrope", Helvetica, sans-serif !important;
 }
-
 .container {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
-
-.textCenter{
-    text-align: center;
+section{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    padding: 0 5vw;
 }
-
 .header{
     position: fixed;
     z-index: 100;
@@ -93,70 +107,108 @@ body {
     pointer-events: none;
     left: 2%;
 }
-
-.a-title {
+.head-title {
     position: relative;
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: conic-gradient(#ed0101, blue);
     pointer-events: none;
-    mix-blend-mode: difference;
-    filter: drop-shadow(2px 4px 6px white);
+    color: white;
+    letter-spacing: 1.125px;
+    font-size: 4em;
+    font-weight: 300;
+    /* text-shadow: 0px 0px 10px black;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
+    z-index: 2;
 }
 .title {
     position: relative;
     margin-top: 25vh;
     pointer-events: none;
-    /* -webkit-text-stroke: 1.3px white; */
     color: white;
     letter-spacing: 1.125px;
     font-size: -webkit-xxx-large;
-    font-weight: 400;
-    mix-blend-mode: screen;
+    font-weight: 300;
+    /* text-shadow: 0px 0px 10px black;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
+    z-index: 2;
+}
+.subtitle {
+    text-align: initial;
+    position: relative;
+    pointer-events: none;
+    color: white;
+    margin: 4vh 0;
+    letter-spacing: 1.125px;
+    font-size: 2em;
+    font-weight: 300;
+    /* text-shadow: 0px 0px 10px black;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
     z-index: 2;
 }
 .section-title {
+    text-align: left;
     position: relative;
     overflow: hidden;
     pointer-events: none;
-    font-size: 5vw;
-    height: 5.8vw;
-    font-weight: 400;
+    margin: 4vh 0;
+    font-size: 4em;
+    font-weight: 300;
     color: #f47920;
     z-index: 2;
 }
 section a,
-section.h3,
-section.h4{
-    color: white;
+section p,
+section h2,
+section h3,
+section h4{
+    position: relative;
     pointer-events: none;
-    mix-blend-mode: screen;
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
-
+section p{
+    text-align: initial;
+    font-size: 2em;
+    font-weight: 200;
+}
+#Home{
+    padding-top: 15vh;
+}
 canvas {
     position: fixed;
     width: 100vw !important;
     height: 100vh !important;
     left: 0%;
     top: 0%;
-    opacity: 0.6;
-    z-index: 1;
+    opacity: 1;
 }
-
-.appear{
-    opacity: 1.0;
+#references{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    display: flex;
+    align-items: center;
 }
-
-#model3D{
-    height: 700px;
-    width: 500px;
-    }
-.logo3D{
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+.quote{
+    text-align: initial;
+    position: relative;
+    width: 50%;
+    padding: 5vw;
+    font-weight: 300;
+    font-size: 2em;
+    pointer-events: none;
+    color: white;
+    /* text-shadow: 0px 0px 10px black;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
+    z-index: 2;
+}
+.quote::after,
+.quote::before {
+    display: block;
+    content: url(./logo/close_white_quote.svg) 50% no-repeat;
+    z-index: 2;
 }

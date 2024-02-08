@@ -7,13 +7,17 @@
         <link rel="stylesheet" href="demo.css">
         <!-- Locomotive Scroll 4.14 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body onscroll="navbarChange()">
         <div class='logo3D'>
             <!-- <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_orange_fire.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="https://neromotion.co.nz/assets/Uploads/test14.jpeg" metalness="1" roughness="0" exposure="60" ar-status="not-presenting">
             </model-viewer> -->
-            <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./logo/BG_v2.png" metalness="1" roughness="0" exposure="100" ar-status="not-presenting">
+            <model-viewer id="model3D" alt="Global Fire 3D Logo" src="./logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./logo/BG_transparent.png" metalness="0.5" roughness="0" exposure="30" tone-mapping="commerce" ar-status="not-presenting" >
             </model-viewer>
         </div>
         <header class="header">
@@ -34,34 +38,32 @@
             </nav>
         </header>
         <div class='container' data-scroll-container>
-            <section id="section1" class="textCenter" data-scroll-section>
+            <section id="Home" class="textCenter" data-scroll-section>
                 <div>
-                    <h2 class='title' data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" data-scroll-class="appear" data-scroll-repeat="true">Market leaders in Passive Fire Protection</h2>
-                </div>
-                <div>
-                    <h2 data-scroll data-scroll-speed="-1" class='title' data-scroll>Compliant Solutions Guaranteed</h2>
+                    <h2 class='head-title' data-scroll>Market leaders<br>in Passive Fire Protection</h2>
+                    <h3 data-scroll data-scroll-speed="-1" class='title' data-scroll>Compliant Solutions Guaranteed</h3>
                 </div>
             </section>
 
             <section id="AboutUs" class="textCenter" data-scroll-section>
                 <div data-scroll>
                     <h2 class="section-title">About Us</h2>
-                    <h3 class='title'>Global Fire are specialists in fire safety and protection</h3>
+                    <h3 class='subtitle'>Global Fire are specialists in fire safety and protection</h3>
+                </div>
+                <div id="references" data-scroll>
+                    <p class='quote'><i>Passive fire protection is the containment of fire within designated areas.</i></p>
+                    <p class='quote'><i>We work closely with suppliers to ensure we’re always up-to-date with new products that offer cost savings for clients.</i></p>
                 </div>
                 <div data-scroll>
-                    <h4>Passive fire protection is the containment of fire within designated areas.</h4>
-                    <h4>We work closely with suppliers to ensure we’re always up-to-date with new products that offer cost savings for clients.</h4>
-                </div>
-                <div data-scroll>
-                    <h2>Quality Workmanship</h2>
-                    <h4>Over the years we have developed and worked hard to become a trusted name amongst the construction industry not just including contractors but to council, consultants, and fire engineers.</h4>
+                    <h3 class="subtitle">Quality Workmanship</h3>
+                    <p>Over the years we have developed and worked hard to become a trusted name amongst the construction industry not just including contractors but to council, consultants, and fire engineers.</p>
                 </div>
             </section>
 
             <section id="Services" class="textCenter" data-scroll-section>
                 <div data-scroll>
                     <h2 class="section-title">Services</h2>
-                    <h3>Some of the many services that we offer</h3>
+                    <h3 class='subtitle'>Some of the many services that we offer</h3>
                 </div>
                 <div data-scroll>
                     <h3 class='title'>Passive Fire Stopping</h3>
@@ -91,43 +93,43 @@
                     <h3 class='title'>We’re always innovating for better solutions</h3>
                 </div>
                 <div data-scroll>
-                    <h4>PassivePro is our revolutionary app that records all on-site works. It streamlines paperwork and provides a headache free council sign-off</h4>
+                    <h4  class='subtitle'>PassivePro is our revolutionary app that records all on-site works. It streamlines paperwork and provides a headache free council sign-off</h4>
                 </div>
                 <div data-scroll>
-                    <h4>Talk to us today on how our technology is designed to help you</h4>
+                    <h4  class='subtitle'>Talk to us today on how our technology is designed to help you</h4>
                 </div>
             </section>
             
-            <section class="textCenter" data-scroll-section>
+            <section id="Projects" class="textCenter" data-scroll-section>
                 <div data-scroll>
                     <h2 class="section-title">Projects</h2>
                     <h4 class='title'>Global Fire carry out works from Building Warrant of Fitness (BWOF) maintenance works to large iconic projects. Our team have the ability to handle projects of any size.</h4>
                 </div>
                 <div data-scroll>
-                    <h4>Carosel</h4>
+                    <h4  class='subtitle'>Carosel</h4>
                 </div>
             </section>
             
-            <section class="textCenter" data-scroll-section>
+            <section id="Team" class="textCenter" data-scroll-section>
                 <div data-scroll>
                     <h2 class="section-title">Team</h2>
                     <h4 class='title'>Global Fire has the most knowledgeable team within the industry. Not only do we have experts with almost 3 decades of experience and multidisciplinary engineers, but we promote the sharing of knowledge to others within the company.</h4>
                 </div>
                 <div data-scroll>
-                    <h4>team members</h4>
+                    <h4  class='subtitle'>team members</h4>
                 </div>
             </section>
 
-            <section class="textCenter" data-scroll-section>
+            <section id="Group" class="textCenter" data-scroll-section>
                 <div data-scroll>
                     <h2 class="section-title">Group</h2>
                     <h4 class='title'>Global Linings</h4>
                     <h4 class='title'>Professional Workmanship, Quality Finish</h4>
                 </div>
                 <div data-scroll>
-                    <h4>Global Linings are the industry leader in interiors – proudly supplying, fixing and stopping since 1991.</h4>
+                    <h4  class='subtitle'>Global Linings are the industry leader in interiors – proudly supplying, fixing and stopping since 1991.</h4>
 
-                        <h4>Specialising in both commercial and residential jobs, Global Linings are your ‘one stop shop’ for anything plasterboard related. We’re also experts on what’s inside and outside your walls and ceilings. Insulation to battens, framing to painting, Global Linings has your project covered from start to finish.</h4>
+                        <h4  class='subtitle'>Specialising in both commercial and residential jobs, Global Linings are your ‘one stop shop’ for anything plasterboard related. We’re also experts on what’s inside and outside your walls and ceilings. Insulation to battens, framing to painting, Global Linings has your project covered from start to finish.</h4>
                 </div>
                 <div data-scroll>
                     <h3><a href="https://www.globallinings.co.nz/">Explore Linings</a></h3>

@@ -1,15 +1,9 @@
-// let scroller = new LocomotiveScroll({
-//     el: document.querySelector("[data-scroll-container]"),
-//     smooth: true,
-// });
-
-function updatePositionY() {
+function navbarChange() {
     let headerTop = document.querySelector("header");
     let navbar = document.querySelector("nav");
     let logo = document.querySelector("#logo");
-    // let section1 = document.querySelector("#section1");
 
-    if (window.scrollY > 90) {
+    if (window.scrollY > 200) {
         headerTop.classList.add("header-flat");
         headerTop.classList.remove("header");
 
@@ -18,7 +12,7 @@ function updatePositionY() {
 
         logo.classList.add("logo-flat");
         logo.classList.remove("logo");
-    } else if (window.scrollY < 90) {
+    } else if (window.scrollY < 200) {
         headerTop.classList.add("header");
         headerTop.classList.remove("header-flat");
 
@@ -31,4 +25,7 @@ function updatePositionY() {
 };
 
 
-window.onscroll = updatePositionY();
+// let scroller = new LocomotiveScroll({
+//     el: document.querySelector("[data-scroll-container]"),
+//     smooth: true,
+// });
