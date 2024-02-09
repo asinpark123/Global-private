@@ -3,7 +3,7 @@ body {
     /* overflow: hidden; */
 }
 .textCenter{
-    text-align: center;
+    text-align: center !important;
 }
 #model3D{
     height: 700px;
@@ -22,7 +22,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: #2D2D2D;
+    background-color: rgb(190, 190, 190);
     font-family: "Manrope", Helvetica, sans-serif !important;
 }
 .container {
@@ -36,10 +36,12 @@ section{
     margin-top: 20vh;
     margin-bottom: 20vh;
     padding: 0 5vw;
+    /* background-color: rgba(0f,0f,0f, 0.2);
+    box-shadow: 0px 0px 15vh rgba(0f,0f,0f, 0.4); */
 }
 .header{
     position: fixed;
-    z-index: 100;
+    z-index: 3;
     top: 0;
     left: 0;
     width: 100%;
@@ -48,11 +50,12 @@ section{
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    background-image: linear-gradient(black, black, transparent);
+    /* background-image: linear-gradient(rgb(19,19,19), rgb(19,19,19), transparent); */
+    background-image: linear-gradient(black, rgb(20,20,20), transparent);
 }
 .header-flat{
     position: fixed;
-    z-index: 100;
+    z-index: 3;
     top: 0;
     left: 0;
     width: 100%;
@@ -60,7 +63,8 @@ section{
     flex-direction: row;
     align-items: center;
     pointer-events: none;
-    background-image: linear-gradient(black, black, transparent);
+    /* background-image: linear-gradient(rgb(19,19,19), rgb(19,19,19), transparent); */
+    background-image: linear-gradient(black, rgb(20,20,20), transparent);
 }
 .navbar{
     display: block;
@@ -107,12 +111,17 @@ section{
     pointer-events: none;
     left: 2%;
 }
+.logo a,
+.logo-flat a{
+    pointer-events: stroke;
+}
 .head-title {
     position: relative;
     pointer-events: none;
     color: white;
     letter-spacing: 1.125px;
-    font-size: 4em;
+    font-size: 4.6em;
+    /* font-weight: 200; */
     font-weight: 300;
     /* text-shadow: 0px 0px 10px black;
     background-color: rgba(0, 0, 0, 0.2);
@@ -146,6 +155,21 @@ section{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
     z-index: 2;
 }
+.subtitle-orange {
+    text-align: initial;
+    position: relative;
+    pointer-events: none;
+    color: #f47920;
+    margin-top: 10vh;
+    margin-bottom: 0vh;
+    letter-spacing: 1.125px;
+    font-size: 2em;
+    font-weight: 300;
+    /* text-shadow: 0px 0px 10px black;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
+    z-index: 2;
+}
 .section-title {
     text-align: left;
     position: relative;
@@ -165,9 +189,9 @@ section h4{
     position: relative;
     pointer-events: none;
     color: white;
-    text-shadow: 0px 0px 10px black;
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 5px black;
+    /* background-color: rgba(19,19,19, 0.2);
+    box-shadow: 0px 0px 20px rgba(19,19,19, 0.4); */
     z-index: 2;
 }
 section p{
@@ -176,7 +200,7 @@ section p{
     font-weight: 200;
 }
 #Home{
-    padding-top: 15vh;
+    padding-top: 10vh;
 }
 canvas {
     position: fixed;
@@ -184,7 +208,7 @@ canvas {
     height: 100vh !important;
     left: 0%;
     top: 0%;
-    opacity: 1;
+    opacity: .9;
 }
 #references{
     margin-top: 10vh;
@@ -197,18 +221,46 @@ canvas {
     position: relative;
     width: 50%;
     padding: 5vw;
-    font-weight: 300;
+    font-weight: 200;
     font-size: 2em;
     pointer-events: none;
     color: white;
     /* text-shadow: 0px 0px 10px black;
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
+    background-color: rgba(19,19,19, 0.2);
+    box-shadow: 0px 0px 20px rgba(19,19,19, 0.4); */
     z-index: 2;
 }
 .quote::after,
 .quote::before {
-    display: block;
+    position: relative;
     content: url(./logo/close_white_quote.svg) 50% no-repeat;
     z-index: 2;
+}
+
+#Services{
+    display: flex;
+    flex-direction: column;
+}
+.services{
+    width: 90%;
+    margin: auto;
+    opacity: .4;
+    z-index: 2;
+    /* pointer-events: auto; */
+}
+.services:hover{
+    width: 90%;
+    margin: auto;
+    opacity: 1;
+    pointer-events: none;
+}
+.services hr{
+    position: relative;
+    border: 0.1px solid #f47920;
+    margin-top: 10vh;
+    width: 100%;
+    z-index: 2;
+}
+.services p{
+    margin-bottom: 0;
 }

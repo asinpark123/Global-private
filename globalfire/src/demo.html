@@ -13,18 +13,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     </head>
 
-    <body onscroll="navbarChange()">
+    <!-- <body onscroll="navbarChange()"> -->
+    <body>
         <div class='logo3D'>
             <!-- <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_orange_fire.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="https://neromotion.co.nz/assets/Uploads/test14.jpeg" metalness="1" roughness="0" exposure="60" ar-status="not-presenting">
             </model-viewer> -->
-            <model-viewer id="model3D" alt="Global Fire 3D Logo" src="./logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./logo/BG_transparent.png" metalness="0.5" roughness="0" exposure="30" tone-mapping="commerce" ar-status="not-presenting" >
+            <model-viewer id="model3D" alt="Global Fire 3D Logo" src="./logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./logo/BG_transparent.png" metalness="0.5" roughness="0" exposure="35" tone-mapping="commerce" ar-status="not-presenting" >
             </model-viewer>
         </div>
-        <header class="header">
-            <div id="logo" class="logo">
-                <img src="./logo/fire_logo.svg" alt="Global Fire Logo">
+        <header class="header-flat">
+            <div id="logo" class="logo-flat">
+                <a href=""><img src="./logo/fire_logo.svg" alt="Global Fire Logo"></a>
             </div>
-            <nav class="navbar">
+            <nav class="navbar-flat">
                 <ul>
                     <li><a href="#Home">Home</a></li>
                     <li><a href="#AboutUs">About Us</a></li>
@@ -65,25 +66,29 @@
                     <h2 class="section-title">Services</h2>
                     <h3 class='subtitle'>Some of the many services that we offer</h3>
                 </div>
-                <div data-scroll>
-                    <h3 class='title'>Passive Fire Stopping</h3>
-                    <h4 class='title'>Services passing through walls and floors can compromise the integrity of the fire cell. Services passing through these cells will need to be adequately fire rated to ensure the safety of building occupants.</h4>
+                <div class="services" data-scroll>
+                    <h3 class='subtitle-orange'>Passive Fire Stopping</h3>
+                    <p>Services passing through walls and floors can compromise the integrity of the fire cell. Services passing through these cells will need to be adequately fire rated to ensure the safety of building occupants.</p>
+                    <hr>
                 </div>
-                <div data-scroll>
-                    <h3 class='title'>Intumescent Painting</h3>
-                    <h4 class='title'>Structural steel may need to be fire rated in order to maintain their structural integrity in the event of a fire.</h4>
+                <div class="services" data-scroll>
+                    <h3 class='subtitle-orange'>Intumescent Painting</h3>
+                    <p>Structural steel may need to be fire rated in order to maintain their structural integrity in the event of a fire.</p>
+                    <hr>
                 </div>
-                <div data-scroll>
-                    <h3 class='title'>Fire Doors</h3>
-                    <h4 class='title'>Fire doors are critical for the containment of fire within buildings.</h4>
+                <div class="services" data-scroll>
+                    <h3 class='subtitle-orange'>Fire Doors</h3>
+                    <p>Fire doors are critical for the containment of fire within buildings.</p>
+                    <hr>
                 </div>
-                <div data-scroll>
-                    <h3 class='title'>Third Party Inspection</h3>
-                    <h4 class='title'>We can assess projects and provide recommendations to ensure your project is compliant with the New Zealand building code.</h4>
+                <div class="services" data-scroll>
+                    <h3 class='subtitle-orange'>Third Party Inspection</h3>
+                    <p>We can assess projects and provide recommendations to ensure your project is compliant with the New Zealand building code.</p>
+                    <hr>
                 </div>
-                <div data-scroll>
-                    <h3 class='title'>Specialist Consultation</h3>
-                    <h4 class='title'>At any stage of the project we can provide expert consultation to provide you with cost saving recommendations and ensure that the passive fire systems are compliant.</h4>
+                <div class="services" data-scroll>
+                    <h3 class='subtitle-orange'>Specialist Consultation</h3>
+                    <p>At any stage of the project we can provide expert consultation to provide you with cost saving recommendations and ensure that the passive fire systems are compliant.</p>
                 </div>
             </section>
             
@@ -141,13 +146,15 @@
             
             <canvas></canvas>
         </div>
-        
-        <script src="cursor.js"></script>
-        <script src="demo.js"></script>
-        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-        <!-- Locomotive Scroll v4.14 -->
-        <script src="locomotive-scroll.min.js"></script>
 
     </body>
+    
+    <script src="cursor.js"></script>
+    <script src="demo.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <!-- Locomotive Scroll v4.14 -->
+    <script src="locomotive-scroll.min.js"></script>
+    <!-- jQuery v3.7.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </html>
