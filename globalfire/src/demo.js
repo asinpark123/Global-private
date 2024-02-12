@@ -24,6 +24,45 @@ function navbarChange() {
     }
 };
 
+// function navbarBGActivate() {
+//     let headerFlat = document.querySelector(".header-flat")
+//     if (window.scrollY < 200) {
+//         headerFlat.style.backgroundImage = "none";
+//     } else if (window.scrollY > 200) {
+//         headerFlat.style.backgroundImage = "linear-gradient(black, rgb(20,20,20), transparent";
+//     } 
+// };
+
+function headerBGfade() {
+    if (window.scrollY < 100) {
+        $(".headerBG-fade").fadeOut();
+    } else if (window.scrollY > 100) {
+        $(".headerBG-fade").fadeIn();
+    } 
+};
+
+let services = document.getElementsByClassName("services");
+let servicesSection = document.getElementById("Services");
+for(let i = 0; i < services.length; i++){
+    services[i].addEventListener('mouseenter', function(){
+        services[i].style.opacity = 1;
+        services[i].style.pointerEvents = "none";
+        services[i].style.transitionDelay= '0.0s';
+        services[i].style.transition = "0.0s";
+    })
+    services[i].addEventListener('mouseleave', function(){
+        services[i].style.opacity = 0.4;
+        services[i].style.pointerEvents = "auto";
+        services[i].style.transitionDelay = "0.2s";
+        services[i].style.transition = "2s";
+    })
+    servicesSection.addEventListener("mouseenter", function () {
+      services[i].style.opacity = 0.4;
+      services[i].style.pointerEvents = "auto";
+      services[i].style.transitionDelay = "0.2s";
+      services[i].style.transition = "2s";
+    });
+}
 
 // let scroller = new LocomotiveScroll({
 //     el: document.querySelector("[data-scroll-container]"),

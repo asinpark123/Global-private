@@ -14,27 +14,29 @@
     </head>
 
     <!-- <body onscroll="navbarChange()"> -->
-    <body>
+    <!-- <body onscroll="navbarBGActivate()"> -->
+    <body onscroll="headerBGfade()">
         <div class='logo3D'>
             <!-- <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./logo/GlobalFire_orange_fire.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="https://neromotion.co.nz/assets/Uploads/test14.jpeg" metalness="1" roughness="0" exposure="60" ar-status="not-presenting">
             </model-viewer> -->
             <model-viewer id="model3D" alt="Global Fire 3D Logo" src="./logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./logo/BG_transparent.png" metalness="0.5" roughness="0" exposure="35" tone-mapping="commerce" ar-status="not-presenting" >
             </model-viewer>
         </div>
+        <div class="headerBG-fade"></div>
         <header class="header-flat">
             <div id="logo" class="logo-flat">
                 <a href=""><img src="./logo/fire_logo.svg" alt="Global Fire Logo"></a>
             </div>
             <nav class="navbar-flat">
                 <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#AboutUs">About Us</a></li>
-                    <li><a href="#Services">Services</a></li>
-                    <li><a href="#PassivePro">Passive Pro</a></li>
-                    <li><a href="#Projects">Projects</a></li>
-                    <li><a href="#Team">Team</a></li>
-                    <li><a href="#Group">Group</a></li>
-                    <li><a href="#Contact">Contact</a></li>
+                    <li><a class="navMenu" href="#Home">Home</a></li>
+                    <li><a class="navMenu" href="#AboutUs">About Us</a></li>
+                    <li><a class="navMenu" href="#Services">Services</a></li>
+                    <li><a class="navMenu" href="#PassivePro">Passive Pro</a></li>
+                    <li><a class="navMenu" href="#Projects">Projects</a></li>
+                    <li><a class="navMenu" href="#Team">Team</a></li>
+                    <li><a class="navMenu" href="#Group">Group</a></li>
+                    <li><a class="navMenu" href="#Contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -95,13 +97,18 @@
             <section id="PassivePro" class="textCenter" data-scroll-section>
                 <div data-scroll>
                     <h2 class="section-title">Passive Pro</h2>
-                    <h3 class='title'>We’re always innovating for better solutions</h3>
+                    <h3 class='subtitle'>We’re always innovating for better solutions</h3>
+                </div>
+                <div class="passivePro" data-scroll>
+                    <div class="img-container">
+                        <video playsinline autoplay loop muted>
+                            <source src="https://globalfire.co.nz/static/media/passive_pro.1d2afc21.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p>PassivePro is our revolutionary app that records all on-site works. It streamlines paperwork and provides a headache free council sign-off</p>
                 </div>
                 <div data-scroll>
-                    <h4  class='subtitle'>PassivePro is our revolutionary app that records all on-site works. It streamlines paperwork and provides a headache free council sign-off</h4>
-                </div>
-                <div data-scroll>
-                    <h4  class='subtitle'>Talk to us today on how our technology is designed to help you</h4>
+                    <p class='subtitle textCenter'>Talk to us today on how our technology is designed to help you</p>
                 </div>
             </section>
             
