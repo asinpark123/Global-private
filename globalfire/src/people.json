@@ -1,0 +1,221 @@
+[
+    {"id":1, "team":"Management", "list":
+        [
+            {
+                "id":1,
+                "name":"Juedie",
+                "duty":"Director",
+                "photo":"./images/Juedie.jpg",
+                "region":""
+            },
+            {
+                "id":2,
+                "name":"Craig",
+                "duty":"Director",
+                "photo":"./images/Craig.jpg",
+                "region":""
+            },
+            {
+                "id":3,
+                "name":"Lance",
+                "duty":"CEO",
+                "photo":"./images/Lance_1.jpg",
+                "hover":"./images/Lance_2.jpg",
+                "region":""
+            },
+            {
+                "id":4,
+                "name":"Paddy",
+                "duty":"General Manager",
+                "photo":"./images/Paddy_1.jpg",
+                "hover":"./images/Paddy_2.jpg",
+                "region":""
+            }
+        ]
+    },
+    {"id": 2, "team":"Technical", "list" : [
+        {
+            "id":1,
+            "name":"Tavita",
+            "duty":"Technical Manager",
+            "photo":"./images/Tavita_1.jpg",
+            "region":""
+        },
+        {
+            "id":2,
+            "name":"Jade",
+            "duty":"Technical Support",
+            "photo":"./images/Jade_1.jpg",
+            "hover":"./images/Jade_2.jpg",
+            "region":""
+        },
+        {
+            "id":3,
+            "name":"Leo",
+            "duty":"Technical Support",
+            "photo":"./images/Leo_1.jpg",
+            "hover":"./images/Leo_2.jpg",
+            "region":""
+        },
+        {
+            "id":4,
+            "name":"Pat",
+            "duty":"Technical Support",
+            "photo":"./images/Pat_1.jpg",
+            "hover":"./images/Pat_2.jpg",
+            "region":""
+        }
+    ]},
+    {"id":3, "team":"Operations", "list":[
+        {
+            "id":1,
+            "name":"Randolpho",
+            "duty":"Operations Manager",
+            "photo":"./images/Rand_1.jpg",
+            "hover":"./images/Rand_2.jpg",
+            "region":""
+        },
+        {
+            "id":2,
+            "name":"Amanda",
+            "duty":"H&S / Compliance Officer",
+            "photo":"./images/Amanda_1.jpg",
+            "hover":"./images/Amanda_2.jpg",
+            "region":""
+        },
+        {
+            "id":3,
+            "name":"Ata",
+            "duty":"Maintenance Supervisor",
+            "photo":"./images/Ata_1.jpg",
+            "hover":"./images/Ata_2.jpg",
+            "region":""
+        },
+        {
+            "id":4,
+            "name":"Baice",
+            "duty":"Project Supervisor",
+            "photo":"./images/Baice_1.jpg",
+            "hover":"./images/Baice_2.jpg",
+            "region":""
+        },
+        {
+            "id":5,
+            "name":"Deane",
+            "duty":"Project Supervisor",
+            "photo":"./images/Deane_1.jpg",
+            "region":""
+        },
+        {
+            "id":6,
+            "name":"Diogo",
+            "duty":"Project Supervisor",
+            "photo":"./images/unknown_man.jpg",
+            "region":""
+        },
+        {
+            "id":7,
+            "name":"Gabriel",
+            "duty":"Project Supervisor",
+            "photo":"./images/Gabriel_1.jpg",
+            "hover":"./images/Gabriel_2.jpg",
+            "region":""
+        },
+        {
+            "id":8,
+            "name":"Joseph",
+            "duty":"Project Supervisor",
+            "photo":"./images/Joseph_1.jpg",
+            "hover":"./images/Joseph_2.jpg",
+            "region":""
+        },
+        {
+            "id":9,
+            "name":"Tom Clark",
+            "duty":"Project Supervisor",
+            "photo":"./images/TomC_1.jpg",
+            "region":""
+        },
+        {
+            "id":10,
+            "name":"Tom Ray",
+            "duty":"Project Supervisor",
+            "photo":"./images/TomR_1.jpg",
+            "region":""
+        }    
+    ]},
+    {"id":4, "team":"Pricing", "list":[
+        {
+            "id":1,
+            "name":"Lucas",
+            "duty":"Head Quantity Surveyor",
+            "photo":"./images/Lucas_1.jpg",
+            "hover":"./images/Lucas_2.jpg",
+            "region":""
+        },
+        {
+            "id":2,
+            "name":"Daniel",
+            "duty":"Quantity Surveyor",
+            "photo":"./images/Daniel_1.jpg",
+            "hover":"./images/Daniel_2.jpg",
+            "region":""
+        },
+        {
+            "id":3,
+            "name":"Sukhitha",
+            "duty":"Quantity Surveyor",
+            "photo":"./images/Sukhitha_1.jpg",
+            "hover":"./images/Sukhitha_2.jpg",
+            "region":""
+        },
+        {
+            "id":4,
+            "name":"Tomo",
+            "duty":"Technical Engineer",
+            "photo":"./images/Tomo_1.jpg",
+            "hover":"./images/Tomo_2.jpg",
+            "region":""
+        }
+    ]},
+    {"id":5, "team":"Administrations", "list":[
+        {
+            "id":1,
+            "name":"Andressa",
+            "duty":"Project Administrator",
+            "photo":"./images/Andressa_1.jpg",
+            "hover":"./images/Andressa_2.jpg",
+            "region":""
+        },
+        {
+            "id":2,
+            "name":"Ang",
+            "duty":"Key Account Manager",
+            "photo":"./images/Ang_1.jpg",
+            "region":""
+        },
+        {
+            "id":3,
+            "name":"Caroline",
+            "duty":"Project Administrator",
+            "photo":"./images/unknown_woman.jpg",
+            "region":""
+        },
+        {
+            "id":4,
+            "name":"Lenise",
+            "duty":"Project Administrator",
+            "photo":"./images/Lenise_1.jpg",
+            "hover":"./images/Lenise_2.jpg",
+            "region":""
+        },
+        {
+            "id":5,
+            "name":"Ruby",
+            "duty":"Project Administrator",
+            "photo":"./images/Ruby_1.jpg",
+            "hover":"./images/Ruby_2.jpg",
+            "region":""
+        }
+    ]}
+]

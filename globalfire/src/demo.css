@@ -234,7 +234,7 @@ canvas {
     height: 100vh !important;
     left: 0%;
     top: 0%;
-    opacity: .9;
+    opacity: 0.9;
 }
 #references{
     margin-top: 10vh;
@@ -318,3 +318,70 @@ video{
     width: 80%;
     text-align: center;
 }
+
+/* Carousel */
+.carousel{
+    pointer-events: none;
+    margin: 10vh 0;
+    width: 120%;
+}
+.owl-carousel{
+    position: relative;
+    backdrop-filter: blur(5px);
+    pointer-events: all;
+    right: 10%;
+}
+.owl-carousel a {
+    pointer-events: all;
+    text-decoration: none;
+}
+.owl-carousel .item{
+    position: relative;
+    width: 100%;
+    min-width: 400px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    opacity: 0.8;
+    backdrop-filter: blur(15px);
+    z-index: 3;
+}
+.owl-carousel .item .imgWindow{
+    height: 500px;
+    overflow: hidden;
+}
+.owl-carousel .item img{
+    max-height: 600px;
+}
+.owl-carousel p{
+    font-size: 1.5em;
+}
+.owl-theme .owl-dots .owl-dot.active span {
+    background: white !important;
+}
+.owl-theme .owl-dots .owl-dot span {
+    background: #7a7a7a !important;
+}
+
+/* Magnific Popup Zoom */
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    /* ideally, transition speed should match zoom duration */
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+/* Slide in */
