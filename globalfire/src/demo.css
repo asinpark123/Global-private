@@ -23,8 +23,10 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgb(190, 190, 190);
+}
+body,
+button{
     font-family: "Manrope", Helvetica, sans-serif !important;
-
 }
 .container {
     margin: 0;
@@ -213,6 +215,7 @@ section h2,
 section h3,
 section h4{
     position: relative;
+    /* pointer-events: initial; */
     pointer-events: none;
     color: white;
     text-shadow: 1px 1px 5px black;
@@ -384,4 +387,67 @@ video{
     opacity: 0;
 }
 
-/* Slide in */
+.teamSection,
+.teamSection h3,
+.teamSection h4 {
+    font-weight: 300 !important;
+    font-family: "Manrope", Helvetica, sans-serif !important;
+}
+.teamTab {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(244, 121, 32, 0.1);
+    background-color: rgba(244, 121, 32, 0.1);
+    width: fit-content;
+    z-index: 2;
+}
+.teamTab button {
+    color: white;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    pointer-events: all;
+}
+.teamTab button:hover {
+    background-color: rgba(244, 121, 32, 0.8);
+}
+.teamTab button.active {
+    background-color: rgba(244, 121, 32, 0.6);
+}
+.tabContent {
+    display: none;
+    position: relative;
+    padding: 6px 12px;
+    border: 1px solid rgba(244, 121, 32, 0.6);
+    z-index: 2;
+    pointer-events: none;
+    text-align: left;
+    backdrop-filter: blur(5px);
+}
+.jobCategory{
+    color: #f47920 !important;
+}
+.jobCategoryContainer{
+    display: flex;
+    flex-direction: column;
+}
+.staffContainer{
+    position: relative;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    vertical-align: initial;
+}
+.staff{
+    display: inline-block;
+    position: relative;
+    max-width: 20%;
+    padding: 15px;
+}
+.staff img{
+    width: 100%;
+}

@@ -133,3 +133,46 @@ $(document).ready(function () {
     });
 });
 
+// Teams Tab
+function openTab(evt, cityName) {
+	let i, tabContent, tabLinks;
+	tabContent = document.getElementsByClassName("tabContent");
+	for (i = 0; i < tabContent.length; i++) {
+		tabContent[i].style.display = "none";
+	}
+	tabLinks = document.getElementsByClassName("tabLinks");
+	for (i = 0; i < tabLinks.length; i++) {
+		tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+	}
+	document.getElementById(cityName).style.display = "block";
+	evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+
+// fetch People JSON
+let teamData
+fetch("./people.json")
+	.then((response) => response.json())
+	.then((json) => {
+        teamData = json; 
+        for(let i = 0;i<teamData.length;i++){
+            const $jobCategory = $('<div class="jobCategoryContainer"></div>');
+            const $jobCategoryTitle = $(`<h4 class="jobCategory">${teamData[i].team}</h4>`);
+            const $staffContainer = $('<div class="staffContainer"></div>');
+            for(let j = 0; j<teamData[i].list.length;j++){
+                const $staff = $('<div class="staff"></div>');
+                $staffContainer.append($staff);
+                let photoSrc = teamData[i].list[j].photo;
+                let staffName = teamData[i].list[j].name;
+                let jobTitle = teamData[i].list[j].duty;
+                const $staffPhoto = $(`<img src="${photoSrc}" alt="${staffName}">`);
+                const $staffInfo = $('<div class="staffInfo"></div>');
+                $staff.append($staffPhoto, $staffInfo);
+                const $staffName = $(`<div class="name">${staffName}</div>`);
+                const $staffJobTitle = $(`<div class="jobTitle">${jobTitle}</div>`);
+                $staffInfo.append($staffName,$staffJobTitle)
+            }
+            $jobCategory.append($jobCategoryTitle, $staffContainer);
+            $(".tabContent").append($jobCategory);
+        }
+    });
