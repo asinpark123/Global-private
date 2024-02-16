@@ -104,8 +104,12 @@ $(document).ready(function () {
 // simpleParallax 5.6.2
 $(document).ready(function () {
     let carouselImages = document.querySelectorAll(".owl-carousel .imgWindow img");
+    let glImage = document.querySelectorAll(".glInfo .imageContainer img");
     new simpleParallax(carouselImages,{
         scale: 1.3
+    });
+    new simpleParallax(glImage, {
+        scale: 1.3,
     });
 });
 
@@ -154,25 +158,31 @@ let teamData
 fetch("./people.json")
 	.then((response) => response.json())
 	.then((json) => {
-        teamData = json; 
+        teamData = json;
         for(let i = 0;i<teamData.length;i++){
             const $jobCategory = $('<div class="jobCategoryContainer"></div>');
             const $jobCategoryTitle = $(`<h4 class="jobCategory">${teamData[i].team}</h4>`);
             const $staffContainer = $('<div class="staffContainer"></div>');
             for(let j = 0; j<teamData[i].list.length;j++){
-                const $staff = $('<div class="staff"></div>');
+                const $staff = $(`<div class="staff" data-aos="fade-right" data-aos-delay="${j*100}"></div>`);
                 $staffContainer.append($staff);
                 let photoSrc = teamData[i].list[j].photo;
                 let staffName = teamData[i].list[j].name;
                 let jobTitle = teamData[i].list[j].duty;
-                const $staffPhoto = $(`<img src="${photoSrc}" alt="${staffName}">`);
+                const $staffPhoto = $(`<div class=imageContainer><img src="${photoSrc}" alt="${staffName}"></div>`);
                 const $staffInfo = $('<div class="staffInfo"></div>');
-                $staff.append($staffPhoto, $staffInfo);
+                $staffPhoto.append($staffInfo);
+                $staff.append($staffPhoto);
                 const $staffName = $(`<div class="name">${staffName}</div>`);
-                const $staffJobTitle = $(`<div class="jobTitle">${jobTitle}</div>`);
+                const $staffJobTitle = $(`<div class="jobTitle"><i>${jobTitle}</i></div>`);
                 $staffInfo.append($staffName,$staffJobTitle)
             }
             $jobCategory.append($jobCategoryTitle, $staffContainer);
             $(".tabContent").append($jobCategory);
         }
     });
+
+// AOS
+$(document).ready(function () {
+    AOS.init();
+});

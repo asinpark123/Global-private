@@ -5,6 +5,9 @@ body {
 .textCenter{
     text-align: center !important;
 }
+.pointable{
+    pointer-events: all;
+}
 #model3D{
     height: 700px;
     width: 500px;
@@ -129,19 +132,17 @@ section{
     position: relative;
     width: 12rem;
     transition: width .4s cubic-bezier(0,0,0,.2);
-    pointer-events: none;
     margin: auto;
 }
 .logo-flat{
     position: relative;
     width: 12rem;
     transition: width .4s cubic-bezier(0,0,0,.2);
-    pointer-events: none;
     left: 2%;
 }
 .logo a,
 .logo-flat a{
-    pointer-events: stroke;
+    pointer-events: all;
 }
 .head-title {
     position: relative;
@@ -213,7 +214,8 @@ section a,
 section p,
 section h2,
 section h3,
-section h4{
+section h4,
+footer{
     position: relative;
     /* pointer-events: initial; */
     pointer-events: none;
@@ -267,20 +269,24 @@ canvas {
 }
 
 #Services{
+    position: relative;
     display: flex;
     flex-direction: column;
+}
+.servicesContainer{
+    margin-top: 5vh;
+    padding: 5vh 0;
+    backdrop-filter: blur(10px);
+    z-index: 2;
 }
 .services{
     width: 90%;
     margin: auto;
     opacity: .4;
-    z-index: 2;
 }
-/* .services:hover{
-    opacity: 1;
-    pointer-events: none;
-    transition-delay:0s;
-} */
+.services .subtitle-orange:nth-of-type(1){
+    margin-top: 0vh;
+}
 .services hr{
     position: relative;
     border: 0.1px solid #f47920;
@@ -311,6 +317,7 @@ video{
     position: relative;
     width: 100%;
     height: 100%;
+    max-width: 1500px;
     z-index: 2;
     pointer-events: none;
 }
@@ -428,8 +435,12 @@ video{
     text-align: left;
     backdrop-filter: blur(5px);
 }
+.tabContent h3{
+    font-size: 1.7em;
+}
 .jobCategory{
     color: #f47920 !important;
+    font-size: 1.5em;
 }
 .jobCategoryContainer{
     display: flex;
@@ -437,17 +448,190 @@ video{
 }
 .staffContainer{
     position: relative;
-    /* display: flex;
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap; */
+    flex-wrap: wrap;
     vertical-align: initial;
+    max-width: 1200px;
+    margin: auto;
 }
 .staff{
-    display: inline-block;
+    /* display: inline-block;
+    position: relative; */
+    max-width: 30%;
+    padding: 1% 1.5%;
+    margin: auto;
+}
+.staff .imageContainer{
     position: relative;
-    max-width: 20%;
-    padding: 15px;
+    pointer-events: all;
 }
 .staff img{
     width: 100%;
+}
+.staffInfo{
+    color: white;
+    text-align: right;
+    font-weight: 500;
+    font-size: 17px;
+    position: absolute;
+    bottom: 5px;
+    width: calc(100% - 30px);
+    padding: 10px 15px;
+    background-color: rgba(244, 121, 32, 0.5);
+    transition: background-color 0.5s;
+}
+.imageContainer:hover .staffInfo{
+    background-color: rgba(244, 121, 32, 0.8);
+}
+
+#Group h4:nth-of-type(1){
+    font-weight: 400;
+    font-size: 2.5em;
+    margin-bottom: 0px;
+    color: #7fcb2b;
+}
+#Group h4:nth-of-type(2){
+    margin:0px;
+}
+.glInfo{
+    display: flex;
+    flex-direction: row;
+}
+.glInfoText{
+    width: 45%;
+    padding-right: 1%;
+    font-size: .8em;
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+}
+.glInfoText .subtitle a{
+    color: #7fcb2b;
+    font-weight: 400;
+    text-decoration: none;
+    pointer-events: all;
+    position: relative;
+    transition: margin-left 0.5s;
+}
+.glInfoText .subtitle a:hover{
+    margin-left: 10px;
+}
+.glInfoText svg{
+    height: 24px;
+    position: relative;
+    bottom: -4px;
+}
+.glInfo .imageContainer{
+    margin: auto;
+    width: 55%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+.glInfo .imageContainer img{
+    height: 100%;
+}
+
+#Contact .contactInfo{
+    display: flex;
+    flex-direction: row;
+}
+.contactInfoText{
+    font-size: .8em;
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+}
+.contactInfoText .subtitle-orange{
+    margin: 0;
+    padding-top: 10px;
+}
+.contactInfoText p{
+    font-size: 1.5em;
+}
+.contactInfoText a{
+    pointer-events: all;
+}
+.contactInfoText,
+.mapContainer{
+    width: 50%;
+}
+.mapContainer{
+    position: relative;
+    border: 1px solid #9a9a9a;
+    z-index: 2;
+}
+
+.footer {
+    position: relative;
+    background-image: linear-gradient(transparent, rgb(20,20,20));
+    backdrop-filter: blur(10px);
+    min-height: 50vh;
+    padding: 100px 135px 0;
+    color: #818181;
+}
+.footer a{
+    text-decoration: none;
+    color: inherit;
+    pointer-events: all;
+}
+.footerContainer{
+    display: flex;
+}
+.footerLeft {
+    width: 80%;
+}
+.footerLeft img {
+    max-width: 300px;
+}
+.leftTop{
+    padding: 10px 0;
+}
+.leftBottom ul.association-list{
+    display: flex;
+    width: 80%;
+    padding: 20px 0;
+    margin-top: 0;
+    border-top: 1px solid #f47920;
+}
+ul.association-list li{
+    width: 20%;
+    text-align: center;
+    padding: 0 0.4vw;
+    list-style-type: none;
+}
+ul.association-list li img{
+    width: 100%;
+    border: 2px solid #888;
+    border-radius: 50%;
+}
+.footerRight{
+    display: flex;
+    width: 20%;
+}
+.footerRight ul.bottom-nav li{
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 15px 0;
+    list-style-type: none;
+    transition: border-bottom, color 0.5s;
+}
+.footerRight ul.bottom-nav li:hover{
+    border-bottom: 2px solid #f47920;
+    color: #f47920;
+}
+
+.footerBottom{
+    margin: 5vh 0;
+    text-align: center;
+}
+.red-font{
+    color: red;
+}
+ul.association-list li p{
+    color: white;
+    font-size: 0.8vw;
 }
