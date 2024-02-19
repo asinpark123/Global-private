@@ -1,3 +1,44 @@
-@media screen {
+/* Mobile and small devices */
+@media only screen and (max-width: 600px){
+
+}
+/* Tablet */
+@media only screen and (max-width: 768px) {
+    
+}
+/* Hamburger menu */
+@media only screen and (max-width: 839px) {
+    .navbar-flat,
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        width: 105px;
+        top: 0%;
+        right: 0%;
+        padding: 5px 0;
+        backdrop-filter: blur(5px);
+        background-color: rgba(190, 190, 190, 0.3);
+        border: transparent;
+        border-bottom-left-radius: 10px 10px;
+    }
+    .navbar-flat li,
+    .navbar li{
+        width: 100%;
+        text-align: left;
+    }
+    .navbar-flat li a,
+    .navbar li a{
+        /* display: none; */
+    }
+    .hamburger{
+        /* display: initial; */
+    }
+    .hamburgerClose img{
+        display: initial;
+    }
+
+}
+/* Desktop */
+@media only screen and (max-width: 952px) {
     
 }

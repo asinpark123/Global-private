@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="./lib/Magnific-Popup-master/dist/magnific-popup.css">
         <!-- AOS 2.3.1 -->
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- Animate.css 4.1.1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +48,12 @@
                     <li><a class="navMenu" href="#Contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="hamburger">
+                <a href="javascript:void(0);"><img onclick="" src="./img/hamburger-menu.svg" alt=""></a>
+            </div>
+            <div class="hamburgerClose">
+                <a href="javascript:void(0);"><img onclick="" src="./img/x-close.svg" alt=""></a>
+            </div>
         </header>
         <div class='container' >
             <section id="Home" class="textCenter" >
@@ -215,7 +223,7 @@
             <section id="Team" class="textCenter" >
                 <div >
                     <h2 class="section-title">Team</h2>
-                    <p>Global Fire has the most knowledgeable team within the industry. Not only do we have experts with almost 3 decades of experience and multidisciplinary engineers, but we promote the sharing of knowledge to others within the company.</p>
+                    <p class="animate__animated animate__fadeInLeft">Global Fire has the most knowledgeable team within the industry. Not only do we have experts with almost 3 decades of experience and multidisciplinary engineers, but we promote the sharing of knowledge to others within the company.</p>
                 </div>
                 <div class="teamSection">
                     <div class="teamTab" >
@@ -359,6 +367,8 @@
     
     <!-- jQuery v3.7.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Model Viewer v3.4.0 -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <!-- Locomotive Scroll v4.14 -->
     <script src="./lib/LocomotiveScroll/locomotive-scroll.min.js"></script>
     <!-- OwlCarousel 2.3.4 -->
@@ -372,5 +382,4 @@
     <!-- scripts -->
     <script src="./lib/FluidCursor/cursor.js"></script>
     <script src="demo.js"></script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </html>

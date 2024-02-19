@@ -150,25 +150,28 @@ function openTab(evt, cityName) {
 	}
 	document.getElementById(cityName).style.display = "block";
 	evt.currentTarget.className += " active";
+    AOS.refresh();
 }
 document.getElementById("defaultOpen").click();
 
+// AOS
 // fetch People JSON
-let teamData
+let teamData, i, j, photoSrc, staffName, jobTitle, title;
 fetch("./people.json")
 	.then((response) => response.json())
 	.then((json) => {
         teamData = json;
-        for(let i = 0;i<teamData.length;i++){
-            const $jobCategory = $('<div class="jobCategoryContainer"></div>');
-            const $jobCategoryTitle = $(`<h4 class="jobCategory">${teamData[i].team}</h4>`);
+        for(i = 0;i<teamData.length;i++){
+            title = teamData[i].team;
+            const $jobCategory = $(`<div class="jobCategoryContainer"></div>`);
+            const $jobCategoryTitle = $(`<h4 class="jobCategory">${title}</h4>`);
             const $staffContainer = $('<div class="staffContainer"></div>');
-            for(let j = 0; j<teamData[i].list.length;j++){
-                const $staff = $(`<div class="staff" data-aos="fade-right" data-aos-delay="${j*100}"></div>`);
+            for(j = 0; j<teamData[i].list.length;j++){
+                const $staff = $(`<div class="staff" data-aos="fade-right" data-aos-delay="${j*200}"></div>`);
                 $staffContainer.append($staff);
-                let photoSrc = teamData[i].list[j].photo;
-                let staffName = teamData[i].list[j].name;
-                let jobTitle = teamData[i].list[j].duty;
+                photoSrc = teamData[i].list[j].photo;
+                staffName = teamData[i].list[j].name;
+                jobTitle = teamData[i].list[j].duty;
                 const $staffPhoto = $(`<div class=imageContainer><img src="${photoSrc}" alt="${staffName}"></div>`);
                 const $staffInfo = $('<div class="staffInfo"></div>');
                 $staffPhoto.append($staffInfo);
@@ -180,9 +183,6 @@ fetch("./people.json")
             $jobCategory.append($jobCategoryTitle, $staffContainer);
             $(".tabContent").append($jobCategory);
         }
-    });
-
-// AOS
-$(document).ready(function () {
-    AOS.init();
+        AOS.init();
 });
+
