@@ -24,7 +24,7 @@
     </head>
     <!-- <body onscroll="navbarChange()"> -->
     <!-- <body onscroll="navbarBGActivate()"> -->
-    <body onscroll="headerBGfade()">
+    <body onscroll="headerBGfade(), hamburgerMenuClose()">
         <div class='logo3D'>
             <!-- <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./img/logo/GlobalFire_orange_fire.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="https://neromotion.co.nz/assets/Uploads/test14.jpeg" metalness="1" roughness="0" exposure="60" ar-status="not-presenting">
             </model-viewer> -->
@@ -36,7 +36,7 @@
             <div id="logo" class="logo-flat">
                 <a href=""><img src="./img/logo/fire_logo.svg" alt="Global Fire Logo"></a>
             </div>
-            <nav class="navbar-flat">
+            <nav id="navbar" class="navbar-flat">
                 <ul>
                     <li><a class="navMenu" href="#Home">Home</a></li>
                     <li><a class="navMenu" href="#AboutUs">About Us</a></li>
@@ -49,13 +49,13 @@
                 </ul>
             </nav>
             <div class="hamburger">
-                <a href="javascript:void(0);"><img onclick="" src="./img/hamburger-menu.svg" alt=""></a>
+                <a href="javascript:void(0);" onclick="hamburgerMenuOpen()"><img src="./img/hamburger-menu.svg" alt=""></a>
             </div>
             <div class="hamburgerClose">
-                <a href="javascript:void(0);"><img onclick="" src="./img/x-close.svg" alt=""></a>
+                <a href="javascript:void(0);" onclick="hamburgerMenuClose()"><img src="./img/x-close.svg" alt=""></a>
             </div>
         </header>
-        <div class='container' >
+        <div onclick="hamburgerMenuClose()" class='container'>
             <section id="Home" class="textCenter" >
                 <div>
                     <h2 class='head-title' >Market leaders<br>in Passive Fire Protection</h2>
@@ -283,7 +283,8 @@
                                 </svg></a></h3>
                     </div>
                     <div class="imageContainer" >
-                        <img src="./img/globallinings.jpg" alt="Global Linings">
+                        <!-- <img src="./img/globallinings.jpg" alt="Global Linings"> -->
+                        <img src="./img/logo/linings_logo.svg" alt="Global Linings">
                     </div>
                 </div>
             </section>

@@ -104,13 +104,13 @@ $(document).ready(function () {
 // simpleParallax 5.6.2
 $(document).ready(function () {
     let carouselImages = document.querySelectorAll(".owl-carousel .imgWindow img");
-    let glImage = document.querySelectorAll(".glInfo .imageContainer img");
+    // let glImage = document.querySelectorAll(".glInfo .imageContainer img");
     new simpleParallax(carouselImages,{
         scale: 1.3
     });
-    new simpleParallax(glImage, {
-        scale: 1.3,
-    });
+    // new simpleParallax(glImage, {
+    //     scale: 1.3,
+    // });
 });
 
 // Magnific Popup
@@ -163,7 +163,7 @@ fetch("./people.json")
         teamData = json;
         for(i = 0;i<teamData.length;i++){
             title = teamData[i].team;
-            const $jobCategory = $(`<div class="jobCategoryContainer"></div>`);
+            const $jobCategory = $('<div class="jobCategoryContainer"></div>');
             const $jobCategoryTitle = $(`<h4 class="jobCategory">${title}</h4>`);
             const $staffContainer = $('<div class="staffContainer"></div>');
             for(j = 0; j<teamData[i].list.length;j++){
@@ -186,3 +186,16 @@ fetch("./people.json")
         AOS.init();
 });
 
+menu = document.getElementById("navbar");
+hamburgerButton = document.querySelector(".hamburger");
+closeButton = document.querySelector(".hamburgerClose img");
+function hamburgerMenuOpen(){
+    menu.classList.add('mobile')
+    closeButton.classList.add('active')
+    hamburgerButton.classList.add('active')
+}
+function hamburgerMenuClose(){
+    menu.classList.remove('mobile');
+    closeButton.classList.remove('active')
+    hamburgerButton.classList.remove('active')
+}

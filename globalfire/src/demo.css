@@ -118,11 +118,18 @@ section{
 .navbar li a:hover{
     color: #f47920 !important;
     border-bottom: 2px solid #f47920;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 .hamburger{
     height: 40px;
-    display: none;
+    opacity: 0.0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
 }
 .hamburger img{
     height: 40px;
@@ -133,6 +140,7 @@ section{
 }
 .hamburgerClose{
     height: 40px;
+    display: none;
 }
 .hamburgerClose img{
     height: 25px;
@@ -141,7 +149,6 @@ section{
     right: 5px;
     top: 5px;
     z-index: 3;
-    display: none;
 }
 #Home{
     scroll-margin-top: 20vh;
@@ -160,12 +167,18 @@ section{
 .logo{
     position: relative;
     width: 12rem;
+    -webkit-transition: width .4s cubic-bezier(0,0,0,.2);
+    -moz-transition: width .4s cubic-bezier(0,0,0,.2);
+    -o-transition: width .4s cubic-bezier(0,0,0,.2);
     transition: width .4s cubic-bezier(0,0,0,.2);
     margin: auto;
 }
 .logo-flat{
     position: relative;
     width: 12rem;
+    -webkit-transition: width .4s cubic-bezier(0,0,0,.2);
+    -moz-transition: width .4s cubic-bezier(0,0,0,.2);
+    -o-transition: width .4s cubic-bezier(0,0,0,.2);
     transition: width .4s cubic-bezier(0,0,0,.2);
     left: 2%;
 }
@@ -445,6 +458,9 @@ video{
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
     pointer-events: all;
 }
@@ -508,6 +524,9 @@ video{
     width: calc(100% - 30px);
     padding: 10px 15px;
     background-color: rgba(244, 121, 32, 0.5);
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
     transition: background-color 0.5s;
 }
 .imageContainer:hover .staffInfo{
@@ -541,6 +560,9 @@ video{
     text-decoration: none;
     pointer-events: all;
     position: relative;
+    -webkit-transition: margin-left 0.5s;
+    -moz-transition: margin-left 0.5s;
+    -o-transition: margin-left 0.5s;
     transition: margin-left 0.5s;
 }
 .glInfoText .subtitle a:hover{
@@ -646,6 +668,9 @@ ul.association-list li img{
     font-weight: 400;
     padding: 15px 0;
     list-style-type: none;
+    -webkit-transition: border-bottom, color 0.5s;
+    -moz-transition: border-bottom, color 0.5s;
+    -o-transition: border-bottom, color 0.5s;
     transition: border-bottom, color 0.5s;
 }
 .footerRight ul.bottom-nav li:hover{
