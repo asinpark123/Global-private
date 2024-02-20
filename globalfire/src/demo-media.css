@@ -1,10 +1,17 @@
+/* Galaxy Fold */
+@media only screen and (max-width: 280px){
+
+}
 /* Mobile and small devices */
 @media only screen and (max-width: 600px){
-
+    .navbar-flat,
+    .navbar{
+        /* right: -35%; */
+    }
 }
 /* Tablet */
 @media only screen and (max-width: 768px) {
-    
+
 }
 /* Hamburger menu */
 @media only screen and (max-width: 839px) {
@@ -14,7 +21,7 @@
         flex-direction: column;
         width: 105px;
         top: 0%;
-        right: -20%;
+        right: -40%;
         padding: 5px 0;
         backdrop-filter: blur(5px);
         background-color: rgba(190, 190, 190, 0.3);
@@ -32,19 +39,15 @@
         background-color: rgba(190, 190, 190, 0.3);
         border: transparent;
         border-bottom-left-radius: 10px 10px;
-        -webkit-transition: right 0.5s ease;
-        -moz-transition: right 0.5s ease;
-        -o-transition: right 0.5s ease;
-        transition: right 0.5s ease;
+        -webkit-transition: right 0.3s ease;
+        -moz-transition: right 0.3s ease;
+        -o-transition: right 0.3s ease;
+        transition: right 0.3s ease;
     }
     .navbar-flat li,
     .navbar li{
         width: 100%;
         text-align: left;
-    }
-    .navbar-flat li a,
-    .navbar li a{
-        /* display: none; */
     }
     .hamburger{
         opacity: 1;
@@ -56,13 +59,44 @@
         display: initial;
     }
     .hamburgerClose img{
-        right: -20%;
+        right: -40%;
     }
     .hamburgerClose img.active{
         right: 0%;
+        -webkit-transition: right 0.3s ease;
+        -moz-transition: right 0.3s ease;
+        -o-transition: right 0.3s ease;
+        transition: right 0.3s ease;
     }
+
+    #references{
+        flex-direction: column;
+    }
+    .quote{
+        text-align: center;
+        width: 100%;
+    }
+    .quote::after,
+    .quote::before{
+        position: relative;
+        margin: auto;
+        width: 5vw;
+        height: 5vh;
+    }
+    .quote::after{
+        top: 15px;
+        left: initial;
+    }
+
+    .passivePro p{
+        width: 100%;
+    }
+
+    .imgTitle{
+        text-align: center;
+    }    
 }
 /* Desktop */
 @media only screen and (min-width: 951px) {
-
+    
 }

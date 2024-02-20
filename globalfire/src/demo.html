@@ -24,11 +24,9 @@
     </head>
     <!-- <body onscroll="navbarChange()"> -->
     <!-- <body onscroll="navbarBGActivate()"> -->
-    <body onscroll="headerBGfade(), hamburgerMenuClose()">
+    <body onload="detectTouchOnLoad()" onscroll="headerBGfade(), hamburgerMenuClose()">
         <div class='logo3D'>
-            <!-- <model-viewer id="model3D" alt="A 3D model of Neil Armstrong" src="./img/logo/GlobalFire_orange_fire.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="https://neromotion.co.nz/assets/Uploads/test14.jpeg" metalness="1" roughness="0" exposure="60" ar-status="not-presenting">
-            </model-viewer> -->
-            <model-viewer id="model3D" alt="Global Fire 3D Logo" src="./img/logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./img/logo/BG_transparent.png" metalness="0.5" roughness="0" exposure="35" tone-mapping="commerce" ar-status="not-presenting" >
+            <model-viewer id="model3D" alt="Global Fire 3D Logo" src="./img/logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./img/logo/BG_transparent.png" metalness="0.9" roughness="0" exposure="25" tone-mapping="commerce" ar-status="not-presenting" >
             </model-viewer>
         </div>
         <div class="headerBG-fade"></div>
