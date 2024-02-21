@@ -49,9 +49,11 @@ button{
     scroll-snap-type: y mandatory;
 }
 section{
+    position: relative;
     margin-top: 20vh;
     margin-bottom: 20vh;
     padding: 0 5vw;
+    z-index: 2;
     /* background-color: rgba(0f,0f,0f, 0.2);
     box-shadow: 0px 0px 15vh rgba(0f,0f,0f, 0.4); */
 }
@@ -90,6 +92,7 @@ section{
     pointer-events: none;
     background-image: linear-gradient(black, rgb(20,20,20), transparent);
     backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 }
 .navbar{
     display: block;
@@ -290,7 +293,8 @@ canvas {
     margin-bottom: 10vh;
     display: flex;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     position: relative;
     pointer-events: none;
     z-index: 2;
@@ -338,7 +342,8 @@ canvas {
 .servicesContainer{
     margin-top: 5vh;
     padding: 5vh 0;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     z-index: 2;
 }
 .services{
@@ -370,6 +375,7 @@ canvas {
     margin: 4vh 0;
     width: 100%;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     z-index: 2;
     pointer-events: none;
 }
@@ -403,6 +409,7 @@ video{
 .owl-carousel{
     position: relative;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     pointer-events: all;
     right: 10%;
 }
@@ -418,6 +425,7 @@ video{
     padding-bottom: 10px;
     opacity: 0.8;
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 3;
 }
 .owl-carousel .item.touch{
@@ -505,6 +513,7 @@ video{
     pointer-events: none;
     text-align: left;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 .tabContent h3{
     font-size: 1.7em;
@@ -641,11 +650,18 @@ video{
     border: 1px solid #9a9a9a;
     z-index: 2;
 }
+.mapContainer{
+    margin-bottom: 5vh;
+}
+.mapContainer .map{
+    min-height: 50vh;
+}
 
 .footer {
     position: relative;
     background-image: linear-gradient(transparent, rgb(20,20,20));
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     min-height: 50vh;
     padding: 100px 135px 0;
     color: #818181;
@@ -694,6 +710,7 @@ ul.association-list li img{
     font-weight: 400;
     padding: 15px 0;
     list-style-type: none;
+    width: fit-content;
     -webkit-transition: border-bottom, color 0.5s;
     -moz-transition: border-bottom, color 0.5s;
     -o-transition: border-bottom, color 0.5s;

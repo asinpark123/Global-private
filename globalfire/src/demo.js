@@ -94,7 +94,7 @@ $(document).ready(function () {
 		center: true,
 		margin: 10,
 		autoWidth: true,
-		autoplay: true,
+		// autoplay: true,
 		autoplayTimeout: 5000,
 		autoplaySpeed: 1000,
 		// autoplayHoverPause: true,
@@ -172,9 +172,7 @@ fetch("./people.json")
 			const $staffContainer = $('<div class="staffContainer"></div>');
 			for (j = 0; j < teamData[i].list.length; j++) {
 				const $staff = $(
-					`<div class="staff" data-aos="fade-right" data-aos-delay="${
-						j * 200
-					}"></div>`
+					`<div class="staff" data-aos="fade-right" data-aos-delay="${(j/i) * 200}"></div>`
 				);
 				$staffContainer.append($staff);
 				photoSrc = teamData[i].list[j].photo;
@@ -222,15 +220,138 @@ function isTouchDevice() {
 let touchDetection;
 function detectTouchOnLoad(){
     touchDetection = isTouchDevice();
-    let i
-    if (!touchDetection){
+    let i, j;
+    let projectTitle = document.querySelectorAll('.owl-carousel p');
+    if (touchDetection){
+        console.log("is touch device")
         canvas.style.zIndex = -1;
         for(i = 0; i< services.length; i++){
             services[i].classList.add("touch");
         }
-        console.log("is touch device")
+        for(j = 0; j< items.length; j++){
+            items[j].classList.add("touch");
+        }
+        
     }
     else{
         console.log("is NOT touch device")
     }
+}
+
+
+let yOffset
+function getYOffset(){
+    yOffset = window.scrollY;
+}
+
+let AboutUsY = document.getElementById("AboutUs").offsetHeight
+let ServicesY = document.getElementById("Services").offsetHeight
+let PassiveProY = document.getElementById("PassivePro").offsetHeight
+let ProjectsY = document.getElementById("Projects").offsetHeight
+let TeamY = document.getElementById("Team").offsetHeight
+let GroupY = document.getElementById("Group").offsetHeight
+let ContactY = document.getElementById("Contact").offsetHeight
+
+let AboutUs = document.getElementById("AboutUs")
+let Services = document.getElementById("Services")
+let PassivePro = document.getElementById("PassivePro")
+let Projects = document.getElementById("Projects")
+let Team = document.getElementById("Team")
+let Group = document.getElementById("Group")
+let Contact = document.getElementById("Contact")
+function sectionTracker() {
+    getYOffset()
+    let navMenus = document.querySelectorAll(".navMenu")
+    let current;
+
+    switch (true) {
+        case yOffset > 0 && yOffset < ServicesY:
+            Services.classList.remove("current");
+            PassivePro.classList.remove("current");
+            Projects.classList.remove("current");
+            Team.classList.remove("current");
+            Group.classList.remove("current");
+            Contact.classList.remove("current");
+            if(!AboutUs.classList.contains()){
+                AboutUs.classList.add("current");
+            }
+            break;
+        case yOffset > ServicesY && yOffset < PassiveProY:
+            AboutUs.classList.remove("current");
+            PassivePro.classList.remove("current");
+            Projects.classList.remove("current");
+            Team.classList.remove("current");
+            Group.classList.remove("current");
+            Contact.classList.remove("current");
+            if(!AboutUs.classList.contains()){
+                Services.classList.add("current");
+            }
+            break;
+        case yOffset > ServicesY && yOffset < PassiveProY:
+            AboutUs.classList.remove("current");
+            PassivePro.classList.remove("current");
+            Projects.classList.remove("current");
+            Team.classList.remove("current");
+            Group.classList.remove("current");
+            Contact.classList.remove("current");
+            if(!AboutUs.classList.contains()){
+                Services.classList.add("current");
+            }
+            break;
+        case yOffset > ServicesY && yOffset < PassiveProY:
+            AboutUs.classList.remove("current");
+            PassivePro.classList.remove("current");
+            Projects.classList.remove("current");
+            Team.classList.remove("current");
+            Group.classList.remove("current");
+            Contact.classList.remove("current");
+            if(!AboutUs.classList.contains()){
+                Services.classList.add("current");
+            }
+            break;
+        case yOffset > ServicesY && yOffset < PassiveProY:
+            AboutUs.classList.remove("current");
+            PassivePro.classList.remove("current");
+            Projects.classList.remove("current");
+            Team.classList.remove("current");
+            Group.classList.remove("current");
+            Contact.classList.remove("current");
+            if(!AboutUs.classList.contains()){
+                Services.classList.add("current");
+            }
+            break;
+        case yOffset > ServicesY && yOffset < PassiveProY:
+            AboutUs.classList.remove("current");
+            PassivePro.classList.remove("current");
+            Projects.classList.remove("current");
+            Team.classList.remove("current");
+            Group.classList.remove("current");
+            Contact.classList.remove("current");
+            if(!AboutUs.classList.contains()){
+                Services.classList.add("current");
+            }
+            break;
+        case yOffset > ServicesY && yOffset < PassiveProY:
+            AboutUs.classList.remove("current");
+            PassivePro.classList.remove("current");
+            Projects.classList.remove("current");
+            Team.classList.remove("current");
+            Group.classList.remove("current");
+            Contact.classList.remove("current");
+            if(!AboutUs.classList.contains()){
+                Services.classList.add("current");
+            }
+            break;
+        case yOffset > ServicesY && yOffset < PassiveProY:
+            AboutUs.classList.remove("current");
+            PassivePro.classList.remove("current");
+            Projects.classList.remove("current");
+            Team.classList.remove("current");
+            Group.classList.remove("current");
+            Contact.classList.remove("current");
+            if(!AboutUs.classList.contains()){
+                Services.classList.add("current");
+            }
+            break;
+    }   
 }

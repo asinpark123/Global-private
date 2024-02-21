@@ -24,7 +24,7 @@
     </head>
     <!-- <body onscroll="navbarChange()"> -->
     <!-- <body onscroll="navbarBGActivate()"> -->
-    <body onload="detectTouchOnLoad()" onscroll="headerBGfade(), hamburgerMenuClose()">
+    <body onload="detectTouchOnLoad()" onscroll="headerBGfade(), hamburgerMenuClose(), getYOffset()">
         <div class='logo3D'>
             <model-viewer id="model3D" alt="Global Fire 3D Logo" src="./img/logo/GlobalFire_3D_Fire_filled_Orange_BlackHouse.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="30deg" environment-image="./img/logo/BG_transparent.png" metalness="0.9" roughness="0" exposure="25" tone-mapping="commerce" ar-status="not-presenting" >
             </model-viewer>
@@ -292,18 +292,20 @@
                 <div class="contactInfo" >
                     <div class="contactInfoText" >
                         <div class="contactSection">
-                            <h4 class='subtitle-orange'>Address</h4>
-                            <p><span class="pointable">PO Box 26110 Epsom 1344</span><br>
-                                <span class="pointable">258 Church St, Onehunga, Auckland, New Zealand</span></p>
+                            <h4 class='subtitle-orange'>Office Address</h4>
+                            <p><span class="pointable">258 Church St, Onehunga, Auckland, New Zealand</span></p>
+                        </div>
+                        <div class="contactSection">
+                            <h4 class='subtitle-orange'>Postal Address</h4>
+                            <p><span class="pointable">PO Box 26110 Epsom 1344</span></p>
                         </div>
                         <div class="contactSection">
                             <h4 class='subtitle-orange'>Phone</h4>
-                            <p>P - <a href="tel:+64-9-579-7460">09 - 579 - 7460</a><br>
-                                F - <span class="pointable">09 - 579 - 7436</span></p>
+                            <p><a href="tel:+64-9-579-7460">09 - 579 - 7460</a></p>
                         </div>
                         <div class="contactSection">
                             <h4 class='subtitle-orange'>Emails</h4>
-                            <p><a href="mailto:quotes@globalfire.co.nz">quotes@globalfire.co.nz</a><br>
+                            <p><a href="mailto:quotes@globalfire.co.nz">quotes@globalfire.co.nz</a><br><br>
                                 <a href="mailto:technical@globalfire.co.nz">technical@globalfire.co.nz</a></p>
                         </div>
                     </div>
@@ -320,12 +322,11 @@
                             <img src="./img/logo/fire_logo_bw.svg" alt="Global Fire Logo">
                             <p><span class="pointable">258 Church St, Onehunga, Auckland, New Zealand</span></p>
                             <p><span class="pointable">09 - 579 - 7460</span></p>
-                            <p><span class="pointable">quotes@globalfire.co.nz</span></p>
+                            <p><span class="pointable"><a href="mailto:quotes@globalfire.co.nz">quotes@globalfire.co.nz</a><br><br>
+                                <a href="mailto:technical@globalfire.co.nz">technical@globalfire.co.nz</a></span></p>
                         </div>
                         <div class="leftBottom">
                             <ul class="association-list">
-                                <li><img src="./img/awards/FPA_Full_2023_2024.c39ef53f.png" alt="FPA New Zealand Corporate Full Member 2023-2024"></li>
-                                <li><img src="./img/awards/stakeholder_listedsupplier.f35a26ed.png" alt="Totika listed supplier"></li>
                                 <li><img src="./img/awards/association_04.40ebf976.png" alt="Wespac Auckland Business Awards">
                                     <p><strong class="red-font">Winner</strong><br>Excellence in Customer Service Delivery 2019</p>
                                 </li>
@@ -335,6 +336,8 @@
                                 <li><img src="./img/awards/association_04.40ebf976.png" alt="Wespac Auckland Business Awards">
                                     <p><strong class="red-font">Finalist</strong><br>Excellence in Strategy &amp; Planning 2021</p>
                                 </li>
+                                <li><img src="./img/awards/FPA_Full_2023_2024.c39ef53f.png" alt="FPA New Zealand Corporate Full Member 2023-2024"></li>
+                                <li><img src="./img/awards/stakeholder_listedsupplier.f35a26ed.png" alt="Totika listed supplier"></li>
                                 <li><img src="./img/awards/association_05.fcf423f1.png" alt="Member of Auckland Business Chamber"></li>
                                 <li><img src="./img/awards/association_06.f4792bd7.png" alt="Supporting women in the trades"></li>
                             </ul>
