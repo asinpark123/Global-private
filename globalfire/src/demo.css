@@ -53,9 +53,11 @@ section{
     margin-top: 20vh;
     margin-bottom: 20vh;
     padding: 0 5vw;
-    z-index: 2;
     /* background-color: rgba(0f,0f,0f, 0.2);
     box-shadow: 0px 0px 15vh rgba(0f,0f,0f, 0.4); */
+}
+section.touch {
+    z-index: 2;
 }
 .header{
     position: fixed;
@@ -169,6 +171,14 @@ section{
 #Contact{
     scroll-margin-top: 10vh;
     scroll-snap-align: start;
+}
+.navMenu.current {
+    color: #f47920 !important;
+    border-bottom: 2px solid #f47920;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
 }
 .logo{
     position: relative;
