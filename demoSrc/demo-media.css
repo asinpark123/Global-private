@@ -10,6 +10,17 @@
     .title{
         font-size: calc(1em + 2.5vw) !important
     }
+
+    .services{
+        width: 100%;
+    }
+    .services .subtitle-orange{
+        font-size: 1.7em;
+    }
+    img.expandIcon{
+        width: 20px;
+    }
+
     .staff{
         /* display: inline-block;
         position: relative; */
@@ -82,23 +93,14 @@
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
     }
-    #references{
-        flex-direction: column;
+
+
+    #nzmap {
+        display: none;
     }
-    .quote{
-        text-align: center;
-        width: 100%;
-    }
-    .quote::after,
-    .quote::before{
-        position: relative;
-        margin: auto;
-        width: 5vw;
-        height: 5vh;
-    }
-    .quote::after{
-        top: 15px;
-        left: initial;
+
+    .services p {
+        font-size: 1.5em;
     }
 
     .passivePro p{
@@ -190,6 +192,24 @@
     }
 
 
+    .aboutUs .subsection:nth-of-type(1) {
+        flex-direction: column;
+    }
+    .aboutUs .subsection:nth-of-type(2) {
+        flex-direction: column-reverse;
+    }
+    .aboutUs .subsection p{
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+    .aboutUs .subsection img{
+        margin-bottom: 5vh;
+    }
+    .aboutUs .subtitle-orange{
+        margin-top: 0;
+    }
+
+
 }
 /* Desktop */
 @media only screen and (max-width: 951px) {
@@ -198,5 +218,16 @@
     }
     .title{
         font-size: 2em;
+    }
+
+    #nzmap {
+        top: 20%;
+        right: 0;
+        width: 50%;
+    }
+
+
+    .aboutUs .subsection p{
+        font-size: 1.7em;
     }
 }

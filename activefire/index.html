@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Global Linings | Excellence in Interiors</title>
+        <!-- meta -->
+        <meta name="description" content="Global Linings are Specialists in Plasterboard Linings and Interior Solutions">
+        <meta name="keywords" content="Global Linings, Interior, Plasterboard, Lining Board, Gib, Giboard, Gypsum Core, Gibraltar Board, Gypsum Plasterboard, Interior Fixing, Interior Stopping">
+        <!-- Website Icons -->
+        <link rel="icon" href="./img/icons/favicon.ico">
+        <link rel="apple-touch-icon" href="./img/icons/apple-icon.png">
+        <link rel="manifest" href="manifest.json" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="demo.css">
+        <link rel="stylesheet" href="demo-media.css">
+        <!-- Locomotive Scroll 4.14 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+        <!-- OwlCarousel 2.3.4 -->
+        <link rel="stylesheet" href="./lib/OwlCarousel2/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="./lib/OwlCarousel2/dist/assets/owl.theme.default.min.css">
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="./lib/Magnific-Popup-master/dist/magnific-popup.css">
+        <!-- AOS 2.3.1 -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- Animate.css 4.1.1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body onload="detectMobileOnLoad()" onscroll="headerBGfade(), hamburgerMenuClose(), sectionTracker(),resizeOnScroll()">
+        <div class='logo3D'>
+            <model-viewer id="model3D" alt="Global Linings 3D Logo" src="./img/logo/GlobalLinings_green_house_filled.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="10deg" environment-image="./img/logo/BG_transparent-linings.png" metalness="0.9" roughness="0" exposure="30" tone-mapping="commerce" ar-status="not-presenting" >
+            </model-viewer>
+        </div>
+        <div class="headerBG-fade"></div>
+        <header class="header-flat">
+            <div id="logo" class="logo-flat">
+                <a href=""><img src="./img/logo/linings_logo.svg" alt="Global Linings Logo"></a>
+            </div>
+            <nav id="navbar" class="navbar-flat">
+                <ul>
+                    <li><a class="navMenu" href="#Home">Home</a></li>
+                    <li><a class="navMenu" href="#AboutUs">About Us</a></li>
+                    <li><a class="navMenu" href="#Services">Services</a></li>
+                    <li><a class="navMenu" href="#GlobalPortal">Global Portal</a></li>
+                    <li><a class="navMenu" href="#Projects">Projects</a></li>
+                    <li><a class="navMenu" href="#Team">Team</a></li>
+                    <li><a class="navMenu" href="#Group">Group</a></li>
+                    <li><a class="navMenu" href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <a href="javascript:void(0);" onclick="hamburgerMenuOpen()"><img src="./img/icons/hamburger-menu.svg" alt=""></a>
+            </div>
+            <div class="hamburgerClose">
+                <a href="javascript:void(0);" onclick="hamburgerMenuClose()"><img src="./img/icons/x-close.svg" alt=""></a>
+            </div>
+        </header>
+        <div onclick="hamburgerMenuClose()" class='container'>
+            <section id="Home" class="textCenter" >
+                <div>
+                    <h2 class='head-title' >Excellence in Interiors</h2>
+                    <h3 class='title' >Professional Workmanship, Quality Finish</h3>
+                </div>
+                <img id="nzmap" src="./img/map_no-name.svg" alt="New Zealand Map">
+            </section>
+
+            <section id="AboutUs" class="textCenter" >
+                <h2 class="section-title">About Us</h2>
+                <h3 class="subtitle">Global Linings are Specialists in Plasterboard Linings and Interior Solutions.</h3>
+                <div class="blur">
+                    <div class="aboutUs">
+                        <div class="subsection">
+                            <p>Established in since 1991, Global Linings offer clients 30 years of trusted experience</p>
+                            <div class="img-container">
+                                <img src="./img/aboutUs1.jpg" alt="about Us 1">
+                            </div>
+                        </div>
+                        <div class="subsection">
+                            <div class="img-container">
+                                <img src="./img/aboutUs2.jpg" alt="about Us 2">
+                            </div>
+                            <p>Global Linings are the market leader for workmanship and project delivery</p>
+                        </div>
+                        <!-- <div id="references" >
+                            <p class='quote'><i>Passive fire protection is the containment of fire within designated areas.</i></p>
+                            <p class='quote'><i>We work closely with suppliers to ensure we’re always up-to-date with new products that offer cost savings for clients.</i></p>
+                        </div> -->
+                    </div>
+                    <div class="aboutUs">
+                        <h3 class="subtitle-green">Universally Recognised Quality</h3>
+                        <p>Global Linings offer a top quality experienced team. From start to finish delivering exceptional quality plasterboard and interior finishing to projects big and small.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Services" class="textCenter" >
+                <h2 class="section-title">Services</h2>
+                <h3 class='subtitle'>Some of the many services that we offer</h3>
+
+                <div class="servicesContainer blur">
+                    <div class="services" >
+                        <div class="serviceTitle">
+                            <h3 class='subtitle-green'>Plasterboard Linings</h3><img class="expandIcon" src="./img/icons/plus-frame.svg" alt="expand icon">
+                        </div>
+                        <p>Global Linings provides a full service plasterboard lining solution including supply, fixing, and stopping of plasterboard for commercial and residential projects of any size</p>
+                    </div>
+                    <div class="services" >
+                        <div class="serviceTitle">
+                            <h3 class='subtitle-green'>Painting</h3><img class="expandIcon" src="./img/icons/plus-frame.svg" alt="expand icon">
+                        </div>
+                        <p>Global Linings can deliver a comprehensive painting solution inside and out</p>
+                    </div>
+                    <div class="services" >
+                        <div class="serviceTitle">
+                            <h3 class='subtitle-green'>Steel Framing</h3><img class="expandIcon" src="./img/icons/plus-frame.svg" alt="expand icon">
+                        </div>
+                        <p>Global Linings offers supply and install of direct fix suspended ceiling, two-way grid, steel stud and strapped walls</p>
+                    </div>
+                    <div class="services" >
+                        <div class="serviceTitle">
+                            <h3 class='subtitle-green'>Insulation</h3><img class="expandIcon" src="./img/icons/plus-frame.svg" alt="expand icon">
+                        </div>
+                        <p>Global Linings will also manage the installation of building insulation works, including underslab soffit liners</p>
+                    </div>
+                    <div class="services" >
+                        <div class="serviceTitle">
+                            <h3 class='subtitle-green'>Barrierline, Weatherline & Other</h3><img class="expandIcon" src="./img/icons/plus-frame.svg" alt="expand icon">
+                        </div>
+                        <p>Global Linings offer other installation solutions such as the Barrierline IT wall system, Weatherline, Fibre Cement Linings and more</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="GlobalPortal" class="textCenter" >
+                <div >
+                    <h2 class="section-title">Global Portal</h2>
+                    <h3 class='subtitle'>Construction efficiency is all about great communication, let us show you how with our tool designed specifically for our trades</h3>
+                </div>
+                <div class="blur">
+                    <div class="GlobalPortal">
+                        <div>
+                            <video playsinline autoplay loop muted>
+                                <source src="./img/portal_demo.webm" type="video/mp4">
+                            </video>
+                        </div>
+                        <p>Global Portal design philosophy – Remote access for site management teams so they can spend more time on site & less time stuck in the office</p>
+                    </div>
+                    <div class="GlobalPortalInfo">
+                        <div class="info">
+                            <p>Global Portal ensures the most up to date information is always available to our staff so they can deliver for you. Our team can deliver from the field:
+                                <ul>
+                                    <li>QA Documentation</li>
+                                    <li>Pre Start inspections / Observations</li>
+                                    <li>Site Diaries</li>
+                                    <li>Health & Safety Toolbox Talks & Site Inspections</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="img-container">
+                            <img src="./img/portal.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="Projects" class="textCenter" >
+                <div >
+                    <h2 class="section-title">Projects</h2>
+                    <p>From small residential homes to iconic large projects, we can handle projects of any size.</p>
+                </div>
+                <div class="carousel blur">
+                    <div class="owl-carousel owl-theme popup-container">
+                        <a href="./img/projects/Alexandra Park Apartments.jpg" title="CMP Construction – Alexandra Park Apartments">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/Alexandra Park Apartments.jpg" alt="CMP Construction – Alexandra Park Apartments" >
+                                </div>
+                                <p class="imgTitle">CMP Construction – Alexandra Park Apartments</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/daniell-building-manufacturing (Fisher Paykel Healthcare Building 4).jpeg" title="Leighs Construction – Fisher & Paykel Healthcare Daniell Building">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/daniell-building-manufacturing (Fisher Paykel Healthcare Building 4).jpeg" alt="Leighs Construction – Fisher & Paykel Healthcare Daniell Building" >
+                                </div>
+                                <p class="imgTitle">Leighs Construction – Fisher & Paykel Healthcare Daniell Building</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/Fletcher - Horizon Hotel.jpg" title="Fletcher - Horizon Hotel">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/Fletcher - Horizon Hotel.jpg" alt="Fletcher - Horizon Hotel" >
+                                </div>
+                                <p class="imgTitle">Fletcher - Horizon Hotel</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/ICON AUT Student Accommodation Podium.jpg" title="ICON - AUT Student Accommodation">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/ICON AUT Student Accommodation Podium.jpg" alt="ICON - AUT Student Accommodation" >
+                                </div>
+                                <p class="imgTitle">ICON - AUT Student Accommodation</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/Jalcon Homes - Hobsonville Developments.jpg" title="Jalcon Homes - Hobsonville Developments">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/Jalcon Homes - Hobsonville Developments.jpg" alt="Jalcon Homes - Hobsonville Developments" >
+                                </div>
+                                <p class="imgTitle">Jalcon Homes - Hobsonville Developments</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/Latham Construction - Great North Road Residential Development.jpg" title="Latham Construction - Great North Road Residential Development">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/Latham Construction - Great North Road Residential Development.jpg" alt="Latham Construction - Great North Road Residential Development" >
+                                </div>
+                                <p class="imgTitle">Latham Construction - Great North Road Residential Development</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/Logan Campbell (Ryman Healthcare Greenlane).jpg" title="Ryman Healthcare – Logan Campbell Retirement Village">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/Logan Campbell (Ryman Healthcare Greenlane).jpg" alt="Ryman Healthcare – Logan Campbell Retirement Village" >
+                                </div>
+                                <p class="imgTitle">Ryman Healthcare – Logan Campbell Retirement Village</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/NZ Strong - Metlifecare Greenwich Gardens.jpg" title="NZ Strong - Greenwich Gardens Metlifecare Village">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/NZ Strong - Metlifecare Greenwich Gardens.jpg" alt="NZ Strong - Greenwich Gardens Metlifecare Village" >
+                                </div>
+                                <p class="imgTitle">NZ Strong - Greenwich Gardens Metlifecare Village</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/Ockham Waterview Apartments.jpg" title="Ockham Construction – Waterview Apartments">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/Ockham Waterview Apartments.jpg" alt="Ockham Construction – Waterview Apartments" >
+                                </div>
+                                <p class="imgTitle">Ockham Construction – Waterview Apartments</p>
+                            </div>
+                        </a>
+                        <a href="./img/projects/OKLA Apartments Albany.jpg" title="Haydn & Rollett – OKLA Apartments">
+                            <div class="item">
+                                <div class="imgWindow">
+                                    <img src="./img/projects/OKLA Apartments Albany.jpg" alt="Haydn & Rollett – OKLA Apartments" >
+                                </div>
+                                <p class="imgTitle">Haydn & Rollett – OKLA Apartments</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="Team" class="textCenter" >
+                <div >
+                    <h2 class="section-title">Team</h2>
+                    <p class="animate__animated animate__fadeInLeft">Professionals with great attitude and excellent team culture.</p>
+                </div>
+                <div class="teamSection">
+                    <!-- commented out for hiding team tab -->
+                    <!-- <div class="teamTab" >
+                        <button id="defaultOpen" class="tabLinks" onclick="openTab(event, 'Auckland')">Auckland</button>
+                        <button class="tabLinks" onclick="openTab(event, 'Waikato')">Waikato</button>
+                        <button class="tabLinks" onclick="openTab(event, 'Wellington')">Wellington</button>
+                    </div> -->
+                    <div id="Auckland" class="tabContent">
+                        <!-- commented out for hiding team tab -->
+                        <!-- <h3>Auckland</h3> -->
+                        <!-- <div class="jobCategoryContainer">
+                            <h4 class="jobCategory">Management</h4>
+                            <div class="staffContainer">
+                                <div class="staff">
+                                    <img src="" alt="">
+                                    <div class="staffInfo">
+                                        <h3 class="name"></h3>
+                                        <p class="jobTitle"><i></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="jobCategoryContainer">
+                            <h4 class="jobCategory">Operations</h4>
+                            <div class="staffContainer">
+                                <div class="staff">
+                                    <img src="" alt="">
+                                    <div class="staffInfo">
+                                        <h3 class="name"></h3>
+                                        <p class="jobTitle"><i></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- commented out for hiding team tab -->
+                    <!-- <div id="Waikato" class="tabContent">
+                        <h3>Waikato</h3>
+                    </div>
+                    <div id="Wellington" class="tabContent">
+                        <h3>Wellington</h3>
+                    </div> -->
+                </div>
+
+            </section>
+
+            <section id="Group" >
+                <div>
+                    <h2 class="section-title">Group</h2>
+                    <h4 class='subtitle'>Global Fire</h4>
+                    <h4 class='subtitle'>Market leaders in Passive Fire Protection</h4>
+                </div>
+                <div class="blur">
+                    <div class="gfInfo">
+                        <div class="gfInfoText" >
+                            <p>Established in 2014, Global Fire are passive fire specialists that can take care of all your fire containment needs.</p>
+                            <p>We position ourselves in the industry to not only carry out passive fire protection works, but to assist and guide all stakeholders in the most cost efficient and compliant solutions.</p>
+                            <p>From small residential projects to large skyscrapers, Global Fire has your project covered from start to finish.</p>
+                            <h3 class="subtitle"><a href="https://www.globalfire.co.nz/">Explore Fire<svg width="55" height="41" viewBox="0 0 55 43" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                                        <path d="M54.988,20.505l0.012,0l0,1l-0.01,0l0.007,0.008l-20.506,20.506l-0.707,-0.707l19.806,-19.807l-53.59,0l0,-1l53.574,0l-19.799,-19.798l0.707,-0.707l20.506,20.505Z" style="fill: #f47920;"></path>
+                                    </svg></a></h3>
+                        </div>
+                        <div class="imageContainer" >
+                            <!-- <img src="./img/globallinings.jpg" alt="Global Linings"> -->
+                            <img src="./img/logo/fire_logo.svg" alt="Global Fire">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Contact">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contactInfo blur">
+                    <div class="contactInfoText" >
+                        <div class="contactSection">
+                            <h4 class='subtitle-green'>Office Address</h4>
+                            <p><span class="pointable">1 Malvern Road, Onehunga, Auckland 1061</span></p>
+                        </div>
+                        <div class="contactSection">
+                            <h4 class='subtitle-green'>Postal Address</h4>
+                            <p><span class="pointable">PO Box 26110, Epsom, Auckland, 1344</span></p>
+                        </div>
+                        <div class="contactSection">
+                            <h4 class='subtitle-green'>Phone</h4>
+                            <p><a href="tel:+64-9-579-7460">09&nbsp;&nbsp;579&nbsp;&nbsp;7460</a></p>
+                        </div>
+                        <div class="contactSection">
+                            <h4 class='subtitle-green'>Emails</h4>
+                            <p><a href="mailto:quotes@gl.co.nz">quotes@gl.co.nz</a></p>
+                        </div>
+                    </div>
+                    <div class="mapContainer">
+                        <iframe class="map" title="Global Fire office" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6379.448912446523!2d174.80188!3d-36.920852!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d48d91321b983%3A0xac3434fe27cbaa9e!2sGlobal%20Linings!5e0!3m2!1sen!2snz!4v1709599426197!5m2!1sen!2snz" width="600" height="450" loading="lazy" style="width: 100%; height: 100%; position: relative; border: 0px;"></iframe>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <div class="footerContainer">
+                    <div class="footerLeft">
+                        <div class="leftTop">
+                            <img src="./img/logo/linings_logo_bw.svg" alt="Global Linings Logo">
+                            <p><span class="pointable">1 Malvern Road, Onehunga, Auckland 1061</span></p>
+                            <p><span class="pointable"><a href="tel:+64-9-579-7460">09&nbsp;&nbsp;579&nbsp;&nbsp;7460</a></span></p>
+                            <p><span class="pointable"><a href="mailto:quotes@gl.co.nz">quotes@gl.co.nz</a></p>
+                        </div>
+                        <div class="leftBottom">
+                            <ul class="association-list">
+                                <li><img src="./img/awards/sitewise.png" alt="SiteWise">
+                                    <p>Proudly a member of SiteWise</p>
+                                </li>
+                                <li><img src="./img/awards/association_04.40ebf976.png" alt="Wespac Auckland Business Awards">
+                                    <p><strong class="red-font">Finalist</strong><br>Excellence in Innovation 2019</p>
+                                </li>
+                                <li><img src="./img/awards/association_04.40ebf976.png" alt="Wespac Auckland Business Awards">
+                                    <p><strong class="red-font">Finalist</strong><br>Excellence in Strategy &amp; Planning 2021</p>
+                                </li>
+                                <li><img src="./img/awards/association_05.fcf423f1.png" alt="Member of Auckland Business Chamber"></li>
+                                <li><img src="./img/awards/association_06.f4792bd7.png" alt="Supporting women in the trades"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footerRight">
+                        <ul class="bottom-nav">
+                            <li class="active"><a href="#Home">HOME</a></li>
+                            <li><a href="#AboutUs">ABOUT US</a></li>
+                            <li><a href="#Services">SERVICES</a></li>
+                            <li><a href="#GlobalPortal">GLOBAL PORTAL</a></li>
+                            <li><a href="#Projects">PROJECTS</a></li>
+                            <li><a href="#Team">TEAM</a></li>
+                            <li><a href="#Group">GROUP</a></li>
+                            <li><a href="#Contact">CONTACT US</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerBottom">
+                    <p class="copyright">© 2024 Global Linings Limited. All Rights Reserved</p>
+                    <div class="icon-author-list">Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a>, <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+            </footer>
+            
+            <canvas id="renderSurface"></canvas>
+        </div>
+
+    </body>
+    
+    <!-- jQuery v3.7.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Model Viewer v3.4.0 -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <!-- Locomotive Scroll v4.14 -->
+    <script src="./lib/LocomotiveScroll/locomotive-scroll.min.js"></script>
+    <!-- OwlCarousel 2.3.4 -->
+    <script src="./lib/OwlCarousel2/dist/owl.carousel.min.js"></script>
+    <!-- simpleParallax 5.6.2 -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="./lib/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+    <!-- AOS 2.3.1 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Fluid JS -->
+    <script src="./lib/Fluid-JS-master/lib/fluid.js"></script>
+    <!-- scripts -->
+    <script src="demo.js"></script>
+</html>

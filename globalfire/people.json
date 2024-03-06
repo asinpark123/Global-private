@@ -1,0 +1,386 @@
+[
+	{
+		"id": 1,
+		"team": "Management",
+		"list": [
+			{
+				"id": 1,
+				"name": "Juedie",
+				"duty": "Director",
+				"photo": "./img/staff/Juedie_1.jpg",
+				"hover": "./img/staff/Juedie_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 2,
+				"name": "Craig",
+				"duty": "Director",
+				"photo": "./img/staff/Craig_1.jpg?v=1",
+				"hover": "./img/staff/Craig_2.jpg?v=2",
+				"region": ""
+			},
+			{
+				"id": 3,
+				"name": "Dan",
+				"duty": "General Manager",
+				"photo": "./img/staff/Dan_1_fire.jpeg",
+				"hover": "./img/staff/Dan_2_fire.jpeg",
+				"region": ""
+			},
+			{
+				"id": 4,
+				"name": "Steven",
+				"duty": "Commercial Manager",
+				"photo": "./img/staff/steven_1_fire.jpeg",
+				"hover": "./img/staff/steven_2_fire.jpeg",
+				"region": ""
+			},
+			{
+				"id": 5,
+				"name": "Lance",
+				"duty": "Business Development Manager",
+				"photo": "./img/staff/lance.jpg",
+				"old-photo": "./img/staff/Lance_1.jpg?v=1",
+				"hover": "./img/staff/Lance_2.jpg?v=2",
+				"region": ""
+			},
+			{
+				"id": 6,
+				"name": "Janene",
+				"duty": "Financial Controller",
+				"photo": "./img/staff/Janene_1.jpg",
+				"old-photo": "./img/staff/Janene_2.jpg",
+				"hover": "./img/staff/Janene_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 7,
+				"name": "Tomo",
+				"duty": "Wellington Regional Manager",
+				"photo": "./img/staff/tomo_1.jpg",
+				"old-photo": "./img/staff/tomo_1.jpg",
+				"hover": "./img/staff/tomo_2.jpg",
+				"region": ""
+			}
+		]
+	},
+	{
+		"id": 2,
+		"team": "Technical",
+		"list": [
+			{
+				"id": 1,
+				"name": "Thiago",
+				"duty": "Technical Lead",
+				"photo": "./img/staff/thiago.jpg",
+				"old-photo": "./img/staff/thiago.jpg",
+				"region": ""
+			},
+			{
+				"id": 2,
+				"name": "Jade",
+				"duty": "Technical Support",
+				"photo": "./img/staff/jade.jpg",
+				"old-photo": "./img/staff/Jade_1.jpg",
+				"hover": "./img/staff/Jade_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 3,
+				"name": "Errol",
+				"duty": "Technical Support",
+				"photo": "./img/staff/errol.jpg",
+				"old-photo": "./img/staff/unknown_man.jpg",
+				"region": ""
+			},
+			{
+				"id": 4,
+				"name": "John",
+				"duty": "Technical Support",
+				"photo": "./img/staff/john.jpg",
+				"old-photo": "./img/staff/john.jpg",
+				"hover": "./img/staff/john.jpg",
+				"region": ""
+			},
+			{
+				"id": 5,
+				"name": "Renz",
+				"duty": "Technical Support",
+				"photo": "./img/staff/renz.jpg",
+				"old-photo": "./img/staff/renz.jpg",
+				"hover": "./img/staff/renz.jpg",
+				"region": ""
+			},
+			{
+				"id": 6,
+				"name": "Jurie",
+				"duty": "Technical Adviser",
+				"photo": "./img/staff/jurie.jpg",
+				"old-photo": "./img/staff/jurie.jpg",
+				"region": ""
+			}
+		]
+	},
+	{
+		"id": 3,
+		"team": "Operations",
+		"list": [
+			{
+				"id": 1,
+				"name": "Tom Ray",
+				"duty": "Operations Manager",
+				"photo": "./img/staff/tom.jpg",
+				"old-photo": "./img/staff/TomR_1.jpg",
+				"hover": "./img/staff/TomR_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 2,
+				"name": "Ariel",
+				"duty": "Project Supervisor",
+				"photo": "./img/staff/ariel.jpg",
+				"old-photo": "./img/staff/unknown_man.jpg",
+				"region": ""
+			},
+			{
+				"id": 3,
+				"name": "Baice",
+				"duty": "Project Supervisor",
+				"photo": "./img/staff/baice.jpg",
+				"old-photo": "./img/staff/baice_1.jpg",
+				"hover": "./img/staff/Baice_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 4,
+				"name": "Deane",
+				"duty": "Project Supervisor",
+				"photo": "./img/staff/deane.jpg?v=1",
+				"old-photo": "./img/staff/deane_1.jpg?v=1",
+				"hover": "./img/staff/Deane_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 5,
+				"name": "Felipe",
+				"duty": "Project Supervisor",
+				"photo": "./img/staff/felipe.jpg",
+				"old-photo": "./img/staff/unknown_man.jpg",
+				"region": ""
+			},
+			{
+				"id": 6,
+				"name": "Gabriel",
+				"duty": "Project Supervisor",
+				"photo": "./img/staff/Gabriel_1.jpg",
+				"old-photo": "./img/staff/Gabriel_1.jpg",
+				"hover": "./img/staff/Gabriel_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 7,
+				"name": "Howlin",
+				"duty": "Project Supervisor",
+				"photo": "./img/staff/howlin.jpg",
+				"old-photo": "./img/staff/howlin_1.jpg",
+				"hover": "./img/staff/howlin_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 8,
+				"name": "Karlos",
+				"duty": "Project Supervisor",
+				"photo": "./img/staff/karlos.jpg",
+				"old-photo": "./img/staff/unknown_man.jpg",
+				"region": ""
+			},
+			{
+				"id": 9,
+				"name": "Maicon",
+				"duty": "Project Supervisor",
+				"photo": "./img/staff/maicon.jpg",
+				"old-photo": "./img/staff/unknown_man.jpg",
+				"region": ""
+			},
+			{
+				"id": 10,
+				"name": "Pamela",
+				"duty": "H&S coordinator",
+				"photo": "./img/staff/pamela.jpg",
+				"old-photo": "./img/staff/unknown_woman.jpg",
+				"region": ""
+			}
+		]
+	},
+	{
+		"id": 4,
+		"team": "Pricing",
+		"list": [
+			{
+				"id": 1,
+				"name": "Lucas",
+				"duty": "Head Quantity Surveyor",
+				"photo": "./img/staff/lucas.jpg",
+				"old-photo": "./img/staff/lucas_1.jpg",
+				"hover": "./img/staff/Lucas_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 2,
+				"name": "Daniel",
+				"duty": "Quantity Surveyor",
+				"photo": "./img/staff/daniel_1.jpg",
+				"old-photo": "./img/staff/daniel_1.jpg",
+				"hover": "./img/staff/daniel_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 3,
+				"name": "Sukhitha",
+				"duty": "Quantity Surveyor",
+				"photo": "./img/staff/sukhitha.jpg",
+				"old-photo": "./img/staff/sukhitha_1.jpg",
+				"hover": "./img/staff/Sukhitha_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 4,
+				"name": "Jerry",
+				"duty": "Quantity Surveyor",
+				"photo": "./img/staff/jerry.jpg",
+				"old-photo": "./img/staff/jerry.jpg",
+				"hover": "./img/staff/jerry.jpg",
+				"region": ""
+			},
+			{
+				"id": 5,
+				"name": "Juzer",
+				"duty": "Quantity Surveyor",
+				"photo": "./img/staff/juzer.jpg",
+				"old-photo": "./img/staff/juzer_1.jpg",
+				"hover": "./img/staff/juzer_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 6,
+				"name": "Jerwin",
+				"duty": "Quantity Surveyor",
+				"photo": "./img/staff/jerwin.jpg",
+				"old-photo": "./img/staff/jerwin.jpg",
+				"hover": "./img/staff/jerwin.jpg",
+				"region": ""
+			},
+			{
+				"id": 7,
+				"name": "Neil",
+				"duty": "Quantity Surveyor",
+				"photo": "./img/staff/neil.jpg",
+				"old-photo": "./img/staff/neil.jpg",
+				"hover": "./img/staff/neil.jpg",
+				"region": ""
+			},
+			{
+				"id": 8,
+				"name": "Renzo",
+				"duty": "Quantity Surveyor",
+				"photo": "./img/staff/renzo.jpg",
+				"old-photo": "./img/staff/renzo.jpg",
+				"hover": "./img/staff/renzo.jpg",
+				"region": ""
+			}
+		]
+	},
+	{
+		"id": 5,
+		"team": "Administration",
+		"list": [
+			{
+				"id": 1,
+				"name": "Lenise",
+				"duty": "Assistant Accountant",
+				"photo": "./img/staff/Lenise_1.jpg",
+				"old-photo": "./img/staff/Lenise_1.jpg",
+				"hover": "./img/staff/Lenise_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 2,
+				"name": "Shela",
+				"duty": "Accounts Receivable Specialist",
+				"photo": "./img/staff/shela.jpg",
+				"old-photo": "./img/staff/shela.jpg",
+				"hover": "./img/staff/shela.jpg",
+				"region": ""
+			},
+			{
+				"id": 3,
+				"name": "Tati",
+				"duty": "Project Administrator",
+				"photo": "./img/staff/tati.jpg",
+				"old-photo": "./img/staff/tati_1.jpg",
+				"hover": "./img/staff/tati_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 4,
+				"name": "Ruby",
+				"duty": "Project Administrator",
+				"photo": "./img/staff/ruby.jpg",
+				"old-photo": "./img/staff/Ruby_1.jpg",
+				"hover": "./img/staff/Ruby_2.jpg",
+				"region": ""
+			},
+			{
+				"id": 5,
+				"name": "Clementine",
+				"duty": "Office Administrator",
+				"photo": "./img/staff/clementine.jpg",
+				"old-photo": "./img/staff/clementine.jpg",
+				"hover": "./img/staff/clementine.jpg",
+				"region": ""
+			},
+			{
+				"id": 6,
+				"name": "Jerome",
+				"duty": "Project Coordinator",
+				"photo": "./img/staff/jerome.jpg",
+				"old-photo": "./img/staff/jerome.jpg",
+				"hover": "./img/staff/jerome.jpg",
+				"region": ""
+			}
+		]
+	},
+	{
+		"id": 5,
+		"team": "Development",
+		"list": [
+			{
+				"id": 1,
+				"name": "Alex",
+				"duty": "Data Migration Specialist",
+				"photo": "./img/staff/alex.jpg",
+				"old-photo": "./img/staff/alex.jpg",
+				"hover": "./img/staff/alex.jpg",
+				"region": ""
+			},
+			{
+				"id": 2,
+				"name": "Andy",
+				"duty": "Frontend/Mobile App Developer",
+				"photo": "./img/staff/andy.jpg",
+				"old-photo": "./img/staff/andy.jpg",
+				"hover": "./img/staff/andy.jpg",
+				"region": ""
+			},
+			{
+				"id": 3,
+				"name": "Vinicius",
+				"duty": "Backend Developer",
+				"photo": "./img/staff/vinicius.jpg",
+				"old-photo": "./img/staff/unknown_man.jpg",
+				"hover": "./img/staff/vinicius.jpg",
+				"region": ""
+			}
+		]
+	}
+]

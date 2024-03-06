@@ -20,7 +20,7 @@ body {
 #model3D{
     height: 700px;
     width: 500px;
-    }
+}
 .logo3D{
     position: fixed;
     left: 50%;
@@ -56,7 +56,7 @@ section{
     /* background-color: rgba(0f,0f,0f, 0.2);
     box-shadow: 0px 0px 15vh rgba(0f,0f,0f, 0.4); */
 }
-section.touch {
+section.mobile {
     z-index: 2;
 }
 .header{
@@ -204,6 +204,7 @@ section.touch {
 }
 section a,
 section p,
+section li,
 section h2,
 section h3,
 section h4,
@@ -219,7 +220,7 @@ footer{
 }
 section p{
     text-align: initial;
-    font-size: 2em;
+    font-size: 1.7em;
     font-weight: 200;
 }
 .head-title {
@@ -290,15 +291,60 @@ section p{
 #Home{
     padding-top: 10vh;
 }
+#nzmap{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 2%;
+    opacity: 0.4;
+    pointer-events: none;
+    width: 35%;
+}
 canvas {
     position: fixed;
     width: 100vw !important;
     height: 100vh !important;
     left: 0%;
     top: 0%;
-    opacity: 0.9;
+    /* opacity: 0.9; */
+    /* z-index: 4; */
+    pointer-events: all;
 }
-#references{
+.aboutUs {
+    position: relative;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    pointer-events: none;
+    z-index: 2;
+}
+#AboutUs>div:last-of-type{
+    padding-top: 10vh;
+}
+#AboutUs li {
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: 200;
+}
+.aboutUs .subsection{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.aboutUs .subsection p {
+    width: 70%;
+    padding: 2.5%;
+    margin: auto;
+}
+.aboutUs .subsection img {
+    width: 100%;
+    padding: 2.5%;
+    margin: auto;
+}
+#AboutUs>div:last-of-type ul,
+#AboutUs>div:last-of-type p:last-of-type{
+    margin-top: 10vh;
+}
+/* #references{
     margin-top: 10vh;
     margin-bottom: 10vh;
     display: flex;
@@ -319,9 +365,6 @@ canvas {
     font-size: 2em;
     pointer-events: none;
     color: white;
-    /* text-shadow: 0px 0px 10px black;
-    background-color: rgba(19,19,19, 0.2);
-    box-shadow: 0px 0px 20px rgba(19,19,19, 0.4); */
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -342,7 +385,7 @@ canvas {
 }
 .quote::after{
     left: 86%;
-}
+} */
 
 #Services{
     position: relative;
@@ -350,32 +393,76 @@ canvas {
     flex-direction: column;
 }
 .servicesContainer{
-    margin-top: 5vh;
-    padding: 5vh 0;
+    /* padding: 5vh 0; */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     z-index: 2;
+    pointer-events: none;
+
 }
 .services{
     width: 90%;
     margin: auto;
-    opacity: .4;
+    opacity: .5;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid white;
+    padding-bottom: 2.5vh;
+    margin-bottom: 2.5vh;
+    margin-top: 2.5vh;
+    pointer-events: all;
+    transition-delay: 0.2s;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
 }
-.services.touch{
+.services.active{
+    opacity: 1;
+    transition-delay: 0.0s;
+    -webkit-transition: 0.0s;
+    -moz-transition: 0.0s;
+    -o-transition: 0.0s;
+    transition: 0.0s;
+}
+img.expandIcon {
+    position: relative;
+    width: 30px;
+    padding: 10px;
+    float: right;
+    pointer-events: all;
+    cursor: pointer;
+    z-index: 2;
+}
+.services.mobile{
     opacity: 1 !important;
 }
 .services .subtitle-orange:nth-of-type(1){
     margin-top: 0vh;
 }
-.services hr{
-    position: relative;
-    border: 0.1px solid #f47920;
-    margin: 5vh 0;
-    width: 100%;
-    z-index: 2;
+.services .subtitle-orange{
+    width: fit-content;
+    float: left;
 }
 .services p{
-    margin-bottom: 0;
+    position: relative;
+    opacity: 0 !important;
+    top: -50px;
+    margin: 0;
+    max-height: 0vh;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+.services p.active{
+    opacity: 1 !important;
+    top: 0px;
+    max-height: 100vh;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
 }
 .passivePro{
     position: relative;
@@ -438,7 +525,7 @@ video{
     -webkit-backdrop-filter: blur(15px);
     z-index: 3;
 }
-.owl-carousel .item.touch{
+.owl-carousel .item.mobile{
     opacity: 1 !important;
 }
 .owl-carousel .item .imgWindow{
@@ -515,10 +602,10 @@ video{
     background-color: rgba(244, 121, 32, 0.6);
 }
 .tabContent {
-    display: none;
+    /* display: none; */ /* commented out for hiding team tab */
     position: relative;
     padding: 6px 12px;
-    border: 1px solid rgba(244, 121, 32, 0.6);
+    /* border-top: 1px solid rgba(244, 121, 32, 0.6); */ /* commented out for hiding team tab */
     z-index: 2;
     pointer-events: none;
     text-align: left;
@@ -530,7 +617,11 @@ video{
 }
 .jobCategory{
     color: #f47920 !important;
-    font-size: 1.5em;
+    font-size: 2em;
+    text-align: center;
+}
+.teamSection h4.jobCategory{
+    font-weight: 200 !important;
 }
 .jobCategoryContainer{
     display: flex;
@@ -635,6 +726,9 @@ video{
     display: flex;
     flex-direction: row;
 }
+#Contact .contactInfo a{
+    text-decoration: none;
+}
 .contactInfoText{
     font-size: .8em;
     display: inherit;
@@ -732,7 +826,7 @@ ul.association-list li img{
 }
 
 .footerBottom{
-    margin: 5vh 0;
+    padding: 5vh 0;
     text-align: center;
 }
 .red-font{

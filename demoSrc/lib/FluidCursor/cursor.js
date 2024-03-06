@@ -10,24 +10,24 @@ let config = {
   VELOCITY_DISSIPATION: 0.99,
   //PRESSURE: 99,
   PRESSURE_DISSIPATION: 0,
-  PRESSURE_ITERATIONS: 25,
-  CURL: 50,
+  PRESSURE_ITERATIONS: 5,
+  CURL: 40,
   SPLAT_RADIUS: 0.0005,
-  SPLAT_FORCE: 10,
-  SHADING: true,
+  SPLAT_FORCE: 2,
+  SHADING: false,
   //COLORFUL: true,
   //COLOR_UPDATE_SPEED: 10,
   //PAUSED: false,
   //BACK_COLOR: { r: 0, g: 0, b: 0 },
-  TRANSPARENT: true,
+  TRANSPARENT: false,
   BLOOM: true,
-  BLOOM_ITERATIONS: 8,
-  BLOOM_RESOLUTION: 1024,
-  BLOOM_INTENSITY: .9,
+  BLOOM_ITERATIONS: 2,
+  BLOOM_RESOLUTION: 64,
+  BLOOM_INTENSITY: .4,
   BLOOM_THRESHOLD: 0.6,
   BLOOM_SOFT_KNEE: 0.7,
   SUNRAYS: false,
-  SUNRAYS_RESOLUTION: 196,
+  SUNRAYS_RESOLUTION: 32,
   SUNRAYS_WEIGHT: 0.1,
 };
 
@@ -786,18 +786,17 @@ canvas.addEventListener("mousemove", (e) => {
 });
 
 canvas.addEventListener(
-    "touchmove",
-    (e) => {
-    e.preventDefault();
-    const touches = e.targetTouches;
-    for (let i = 0; i < touches.length; i++) {
-        let pointer = pointers[i];
-        pointer.moved = pointer.down;
-      pointer.dx = (touches[i].pageX - pointer.x) * 10.0;
-      pointer.dy = (touches[i].pageY - pointer.y) * 10.0;
-        pointer.x = touches[i].pageX;
-        pointer.y = touches[i].pageY;
-    }
+    "touchmove", (e) => {
+      e.preventDefault();
+      const touches = e.targetTouches;
+      for (let i = 0; i < touches.length; i++) {
+          let pointer = pointers[i];
+          pointer.moved = pointer.down;
+          pointer.dx = (touches[i].pageX - pointer.x) * 10.0;
+          pointer.dy = (touches[i].pageY - pointer.y) * 10.0;
+          pointer.x = touches[i].pageX;
+          pointer.y = touches[i].pageY;
+      }
     },
     false
 );
