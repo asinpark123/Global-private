@@ -1,4 +1,5 @@
 import psycopg
+import datetime
 
 # Connect to an existing database
 # globalcore_local public schema connection
@@ -17,9 +18,10 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
     contactEntity_contactRole_list = []
     contactEntity_responsibilities = []
     gfContact_info = []
+    new_entityNotes = []
+    defaultTime = datetime.time(9,00)
     # Open a cursor to perform database operations
     with conn.cursor() as cur:
-
 ## Adding entity_id column to GF Jobs table and inserting entity_id where GF resource's NZBN = GL Entity NZBN. Creates a txt file (glEntity_gfResource.txt) containing pairs of new entity ids to corresponding gfResource ids, also as list of tuples in new_glEntity_gfResource.
         cur.execute("SELECT public.crm_gl_entity.id as GL_ENTITY_ID, public.crm_gl_entity.name as GL_ENTITY_NAME, temp.resources_resource.id as GF_RESOURCE_ID, temp.resources_resource.legal_name as GF_RESOURCE_NAME FROM public.crm_gl_entity INNER JOIN temp.resources_resource ON public.crm_gl_entity.nzbn = temp.resources_resource.NZBN WHERE public.crm_gl_entity.nzbn <> '' OR temp.resources_resource.NZBN <> '' ORDER BY public.crm_gl_entity.id ASC")
         # cur.fetchall()
@@ -104,6 +106,7 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
         for contact_id, resource_id in contact_id_resource_id.items():
             if resource_id in gfResource_glEntity.keys():
                 gfContact_resourceEntity_id += [(contact_id,gfResource_glEntity[resource_id])]
+
     # Updates the parent_id by replacing the placeholder(contact_id) with its actual parent's entity_id WHERE id > 2625 which should be where new data id post resource migration starts from
         for items in gfContact_resourceEntity_id:
             cur.execute("UPDATE public.crm_gl_entity SET parent_id = %s WHERE parent_id = %s AND id > 2625" % (items[1],items[0]))
@@ -152,7 +155,26 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
                 cur.execute("INSERT INTO public.crm_gl_entityphonenumber(phone_number, current, entity_id) VALUES('%s', true, %s) RETURNING id" % (items[2], new_gfContacts_glEntity[items[0]]))
                 entityphonenumber_id_contacttype_id = cur.fetchone()[0]
                 cur.execute("INSERT INTO public.crm_gl_entityphonenumber_contact_types (entityphonenumber_id, contacttype_id) VALUES(%s,1)" % entityphonenumber_id_contacttype_id)
+            
+        # Migrating ResourceNotes into EntityNotes
+        cur.execute("SELECT temp.resources_resourcenote.added_date, temp.resources_resourcenote.note, temp.resources_resourcenote.resource_id, temp.resources_resourcenote_assignee.globaluser_id FROM temp.resources_resourcenote INNER JOIN temp.resources_resourcenote_assignee ON temp.resources_resourcenote.id = temp.resources_resourcenote_assignee.resourcenote_id ORDER BY temp.resources_resourcenote.id ASC")
+        result_pt9 = cur.fetchall()
+        for results in result_pt9:
+            datetimeCombine = datetime.datetime.combine(results[0],defaultTime)
+            notes = results[1].replace("'","''")
+            results_2 = gfResource_glEntity[results[2]]
+            new_entityNotes += [(datetimeCombine,notes,results_2,results[3])]
+        for items in new_entityNotes:
+            cur.execute("INSERT INTO public.crm_gl_entitynote(created, last_modified, pinned, note, creator_id, entity_id, last_modified_by_id) VALUES('%s','%s','false','%s',%s,%s,%s)" % (items[0],items[0],items[1],items[3],items[2],items[3]))
 
-                
+        cur.close()
         # Make the changes to the database persistent
-        # conn.commit()
+    conn.commit()
+
+    # Foerign Key association for new columns added to Job GF and setting client_id column as NOT NULL
+    with conn.cursor() as cur:
+        cur.execute("ALTER TABLE public.job_gf_job ADD CONSTRAINT fk_job_gf_job_client_id FOREIGN KEY (client_id) REFERENCES public.crm_gl_entity(id)")
+        cur.execute("ALTER TABLE public.job_gf_job ALTER COLUMN client_id SET NOT NULL")
+        cur.execute("ALTER TABLE public.job_gf_job ADD CONSTRAINT fk_job_gf_job_client_qs_entity FOREIGN KEY (client_qs_entity) REFERENCES public.crm_gl_entity(id)")
+        cur.close()
+    conn.commit()
