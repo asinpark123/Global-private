@@ -11,7 +11,7 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
     defaultTime = datetime.time(9,00)
     # Open a cursor to perform database operations
     with conn.cursor() as cur:
-        # Migrating ResourceNotes into EntityNotes
+        # Migrating ResourceNotes into EntityNotes, getting data from GF resourceNotes and from resources_resourcenote_assignee via INNER JOIN, converting resource ID to Entity ID by using gfResource_glEntity dict created earlier.
         cur.execute("SELECT temp.resources_resourcenote.added_date, temp.resources_resourcenote.note, temp.resources_resourcenote.resource_id, temp.resources_resourcenote_assignee.globaluser_id FROM temp.resources_resourcenote INNER JOIN temp.resources_resourcenote_assignee ON temp.resources_resourcenote.id = temp.resources_resourcenote_assignee.resourcenote_id ORDER BY temp.resources_resourcenote.id ASC")
         result_pt9 = cur.fetchall()
         for results in result_pt9:
