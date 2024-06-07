@@ -5,8 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Global Fire | Market leaders in Passive Fire Protection</title>
         <!-- meta -->
-        <meta name="description" content="Market leaders in Passive Fire Protection">
-        <meta name="keywords" content="Global Fire, Passive Fire Protection, Fire Protection, FRR, Fire Resistance Rating, Fire Resistance, Firestopping, collar, mastic, intumescent paint">
+        <meta name="description" content="Market leaders in Passive Fire Protection, providing installations of passive fire protection measures that play a crucial role in safeguarding buildings and occupants against the devastating effects of fire by containing its spread, minimising damage, and providing valuable time for evacuation and firefighting efforts.">
+        <meta name="keywords" content="Global Fire, Passive Fire, Passive Fire Protection, Passive fire survey, Fire Protection, FRR, Fire Resistance Rating, Fire Resistance, Firestopping, Fire sealants, Fire engineer, collar, mastic, intumescent paint">
+        <meta name="thumbnail" content="https://www.globalfire.co.nz/img/logo/fire_logo.png" />
+        <!-- meta Open Graph -->
+        <meta property="og:title" content="Global Fire | Market leaders in Passive Fire Protection">
+        <meta property="og:image" content="https://www.globalfire.co.nz/img/logo/fire_logo.png">
+        <meta property="og:url" content="https://www.globalfire.co.nz/">
+        <meta property="og:locale" content="en_NZ" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Global Fire website">
         <!-- Website Icons -->
         <link rel="icon" href="./img/icons/favicon.ico">
         <link rel="apple-touch-icon" href="./img/icons/apple-icon.png">
@@ -29,7 +37,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-        
+        <!--
+        <PageMap>
+            <DataObject type="thumbnail">
+                <Attribute name="src" value="https://www.globalfire.co.nz/img/logo/fire_logo.png"/>
+                <Attribute name="width" value="200"/>
+                <Attribute name="height" value="200"/>
+            </DataObject>
+        </PageMap>
+        -->
     </head>
 
     <body onload="detectMobileOnLoad()" onscroll="headerBGfade(), hamburgerMenuClose(), sectionTracker(),resizeOnScroll()">
@@ -40,32 +56,32 @@
         <div class="headerBG-fade"></div>
         <header class="header-flat">
             <div id="logo" class="logo-flat">
-                <a href=""><img src="./img/logo/fire_logo.svg" alt="Global Fire Logo"></a>
+                <a href="#"><img src="./img/logo/fire_logo.svg" alt="Global Fire Logo"></a>
             </div>
             <nav id="navbar" class="navbar-flat">
                 <ul>
-                    <li><a class="navMenu" href="#Home">Home</a></li>
-                    <li><a class="navMenu" href="#AboutUs">About Us</a></li>
-                    <li><a class="navMenu" href="#Services">Services</a></li>
-                    <li><a class="navMenu" href="#PassivePro">Passive Pro</a></li>
-                    <li><a class="navMenu" href="#Projects">Projects</a></li>
-                    <li><a class="navMenu" href="#Team">Team</a></li>
-                    <li><a class="navMenu" href="#Group">Group</a></li>
-                    <li><a class="navMenu" href="#Contact">Contact</a></li>
+                    <li><a class="navMenu" href="javascript:document.getElementById('Home').scrollIntoView(true);">Home</a></li>
+                    <li><a class="navMenu" href="javascript:document.getElementById('AboutUs').scrollIntoView(true);">About Us</a></li>
+                    <li><a class="navMenu" href="javascript:document.getElementById('Services').scrollIntoView(true);">Services</a></li>
+                    <li><a class="navMenu" href="javascript:document.getElementById('PassivePro').scrollIntoView(true);">Passive Pro</a></li>
+                    <li><a class="navMenu" href="javascript:document.getElementById('Projects').scrollIntoView(true);">Projects</a></li>
+                    <li><a class="navMenu" href="javascript:document.getElementById('Team').scrollIntoView(true);">Team</a></li>
+                    <li><a class="navMenu" href="javascript:document.getElementById('Group').scrollIntoView(true);">Group</a></li>
+                    <li><a class="navMenu" href="javascript:document.getElementById('Contact').scrollIntoView(true);">Contact</a></li>
                 </ul>
             </nav>
             <div class="hamburger">
-                <a href="javascript:void(0);" onclick="hamburgerMenuOpen()"><img src="./img/icons/hamburger-menu.svg" alt=""></a>
+                <a href="#" onclick="hamburgerMenuOpen(event)"><img src="./img/icons/hamburger-menu.svg" alt="hamburger menu open"></a>
             </div>
             <div class="hamburgerClose">
-                <a href="javascript:void(0);" onclick="hamburgerMenuClose()"><img src="./img/icons/x-close.svg" alt=""></a>
+                <a href="#" onclick="hamburgerMenuClose(event)"><img src="./img/icons/x-close.svg" alt="hamburger menu close"></a>
             </div>
         </header>
         <div onclick="hamburgerMenuClose()" class='container'>
             <section id="Home" class="textCenter" >
                 <div>
-                    <h2 class='head-title' >Market leaders<br>in Passive Fire Protection</h2>
-                    <h3 class='title' >Compliant Solutions Guaranteed</h3>
+                    <h1 class='head-title' >Market leaders<br>in Passive Fire Protection</h1>
+                    <h2 class='title' >Compliant Solutions Guaranteed</h2>
                 </div>
                 <img id="nzmap" src="./img/map_no-name.svg" alt="New Zealand Map">
             </section>
@@ -145,16 +161,18 @@
                     <h2 class="section-title">Passive Pro</h2>
                     <h3 class='subtitle'>We’re always innovating for better solutions</h3>
                 </div>
-                <div class="passivePro" >
-                    <div class="img">
-                        <video playsinline autoplay loop muted>
-                            <source src="./img/passive_pro_demo.mp4" type="video/mp4">
-                        </video>
+                <div class="blur">
+                    <div class="passivePro" >
+                        <div class="img">
+                            <video playsinline autoplay loop muted>
+                                <source src="./img/passive_pro_demo.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <p>PassivePro is our revolutionary app that records all on-site works. It streamlines paperwork and provides a headache free council sign-off</p>
                     </div>
-                    <p>PassivePro is our revolutionary app that records all on-site works. It streamlines paperwork and provides a headache free council sign-off</p>
-                </div>
-                <div >
-                    <p class='subtitle textCenter'>Talk to us today on how our technology is designed to help you</p>
+                    <div >
+                        <p class='subtitle textCenter'>Talk to us today on how our technology is designed to help you</p>
+                    </div>
                 </div>
             </section>
             
@@ -300,13 +318,13 @@
 
             </section>
 
-            <section id="Group" >
+            <!-- <section id="Group" >
                 <div>
                     <h2 class="section-title">Group</h2>
                     <h4 class='subtitle'>Global Linings</h4>
                     <h4 class='subtitle'>Professional Workmanship, Quality Finish</h4>
                 </div>
-                <div class="glInfo">
+                <div class="glInfo blur">
                     <div class="glInfoText" >
                         <p>Global Linings are the industry leader in interiors – proudly supplying, fixing and stopping since 1991.</p>
                         <p>Specialising in both commercial and residential jobs, Global Linings are your ‘one stop shop’ for anything plasterboard related. We’re also experts on what’s inside and outside your walls and ceilings. Insulation to battens, framing to painting, Global Linings has your project covered from start to finish.</p>
@@ -315,15 +333,63 @@
                                 </svg></a></h3>
                     </div>
                     <div class="imageContainer" >
-                        <!-- <img src="./img/globallinings.jpg" alt="Global Linings"> -->
                         <img src="./img/logo/linings_logo.svg" alt="Global Linings">
+                    </div>
+                </div>
+            </section> -->
+
+            <section id="Group" >
+                <div>
+                    <h2 class="section-title">Group</h2>
+                    <p>With all our services conveniently housed under one roof, we offer a seamless solution for all your fire protection needs. Our three specialized divisions ensure that every aspect of your project is handled with expertise and precision.</p>
+                </div>
+                <div class="blur">
+                    <div class="group">
+                        <div class="groupInfoText" >
+                            <h4 class='subtitle'>Global Fire</h4>
+                            <p>Our skilled team is equipped to line your building's internal walls with precision and care, ensuring that every detail is meticulously attended to. From fire-rated walls to penetration sealing, we prioritize safety and compliance to provide you with peace of mind.</p>
+                            <h3 class="subtitle"><a href="https://www.globalfire.co.nz/">Explore Passive Fire<svg width="55" height="41" viewBox="0 0 55 43" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                                        <path d="M54.988,20.505l0.012,0l0,1l-0.01,0l0.007,0.008l-20.506,20.506l-0.707,-0.707l19.806,-19.807l-53.59,0l0,-1l53.574,0l-19.799,-19.798l0.707,-0.707l20.506,20.505Z" style="fill: #f47920;"></path>
+                                    </svg></a></h3>
+                        </div>
+                        <div class="imageContainer justifyRight">
+                            <img src="./img/logo/fire_logo.svg" alt="Global Fire">
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="groupInfoText">
+                            <h4 class='subtitle'>Global Linings</h4>
+                            <p>Whether you require fire-rated linings or decorative finishes, our linings division delivers quality craftsmanship and attention to detail. We understand the importance of both aesthetics and functionality, and we strive to exceed your expectations with our comprehensive lining’s solutions</p>
+                            <h3 class="subtitle"><a href="https://www.globallinings.co.nz/">Explore Linings<svg width="55" height="41" viewBox="0 0 55 43" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                                <path d="M54.988,20.505l0.012,0l0,1l-0.01,0l0.007,0.008l-20.506,20.506l-0.707,-0.707l19.806,-19.807l-53.59,0l0,-1l53.574,0l-19.799,-19.798l0.707,-0.707l20.506,20.505Z" style="fill: rgb(127, 203, 43);"></path>
+                            </svg></a></h3>
+                        </div>
+                        <div class="imageContainer justifyRight">
+                            <!-- <img src="./img/globallinings.jpg" alt="Global Linings"> -->
+                            <img src="./img/logo/linings_logo_v2.svg" alt="Global Linings">
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="groupInfoText">
+                            <h4 class='subtitle'>Global Active Fire</h4>
+                            <p>Our active fire division specializes in the installation, testing, commissioning, and maintenance of fire suppression and detection systems. From sprinkler systems to fire alarms, we ensure that your property is equipped with a reliable and compliant fire protection system that meets the highest industry standards.</p>
+                            <h3 class="subtitle"><a href="https://globalactivefire.co.nz/">Explore Active Fire<svg width="55" height="41" viewBox="0 0 55 43" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                                        <path d="M54.988,20.505l0.012,0l0,1l-0.01,0l0.007,0.008l-20.506,20.506l-0.707,-0.707l19.806,-19.807l-53.59,0l0,-1l53.574,0l-19.799,-19.798l0.707,-0.707l20.506,20.505Z" style="fill: #ED1B24;"></path>
+                                    </svg></a></h3>
+                        </div>
+                        <div class="imageContainer justifyRight">
+                            <img src="./img/logo/GAF_Logo.svg" alt="Global Active Fire">
+                        </div>
+                    </div>
+                    <div>
+                        <p>With our integrated approach and commitment to excellence, we guarantee that every aspect of your fire protection needs is addressed with the utmost care and attention to detail. Partner with us to safeguard your assets and ensure the safety of your occupants.</p>
                     </div>
                 </div>
             </section>
 
             <section id="Contact">
                 <h2 class="section-title">Contact Us</h2>
-                <div class="contactInfo" >
+                <div class="contactInfo blur">
                     <div class="contactInfoText" >
                         <div class="contactSection">
                             <h4 class='subtitle-orange'>Office Address</h4>
@@ -374,25 +440,27 @@
                                 <li><img src="./img/awards/stakeholder_listedsupplier.f35a26ed.png" alt="Totika listed supplier"></li>
                                 <li><img src="./img/awards/association_05.fcf423f1.png" alt="Member of Auckland Business Chamber"></li>
                                 <li><img src="./img/awards/association_06.f4792bd7.png" alt="Supporting women in the trades"></li>
+                                <li><img src="./img/awards/SiteWise-Gold.png" alt="SiteWise">
+                                    <p>Proudly a member of SiteWise</p>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="footerRight">
                         <ul class="bottom-nav">
-                            <li class="active"><a href="#Home">HOME</a></li>
-                            <li><a href="#AboutUs">ABOUT US</a></li>
-                            <li><a href="#Services">SERVICES</a></li>
-                            <li><a href="#PassivePro">PASSIVE PRO</a></li>
-                            <li><a href="#Projects">PROJECTS</a></li>
-                            <li><a href="#Team">TEAM</a></li>
-                            <li><a href="#Group">GROUP</a></li>
-                            <li><a href="#Contact">CONTACT US</a></li>
+                            <li class="active"><a href="javascript:document.getElementById('Home').scrollIntoView(true);">HOME</a></li>
+                            <li><a href="javascript:document.getElementById('AboutUs').scrollIntoView(true);">ABOUT US</a></li>
+                            <li><a href="javascript:document.getElementById('Services').scrollIntoView(true);">SERVICES</a></li>
+                            <li><a href="javascript:document.getElementById('PassivePro').scrollIntoView(true);">PASSIVE PRO</a></li>
+                            <li><a href="javascript:document.getElementById('Projects').scrollIntoView(true);">PROJECTS</a></li>
+                            <li><a href="javascript:document.getElementById('Team').scrollIntoView(true);">TEAM</a></li>
+                            <li><a href="javascript:document.getElementById('Group').scrollIntoView(true);">GROUP</a></li>
+                            <li><a href="javascript:document.getElementById('Contact').scrollIntoView(true);">CONTACT US</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="footerBottom">
                     <p class="copyright">© 2024 Global Fire Limited. All Rights Reserved</p>
-                    <div class="icon-author-list">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/mynamepong" title="mynamepong">mynamepong</a>, <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a>, <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a>, <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a>, <a href="https://www.flaticon.com/authors/pause08" title="Pause08">Pause08</a>, <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a>, <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                 </div>
             </footer>
             

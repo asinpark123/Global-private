@@ -1,6 +1,6 @@
 [
     {
-        "team": "Senior Management",
+        "team": "Directors",
         "list": [
             {
                 "name": "Juedie",
@@ -16,6 +16,25 @@
                 "hover": "./img/staff/Craig_2.jpg",
                 "region": ""
             },
+            {
+                "name": "Dan",
+                "duty": "Managing Director",
+                "photo": "./img/staff/Dan_1.jpg",
+                "hover": "./img/staff/Dan_2.jpg",
+                "region": ""
+            },
+            {
+                "name": "Steven",
+                "duty": "Director",
+                "photo": "./img/staff/steven_1.jpg",
+                "hover": "./img/staff/Steven_2.jpg",
+                "region": ""
+            }
+        ]
+    },
+    {
+        "team": "Senior Management",
+        "list": [
             {
                 "name": "Dan",
                 "duty": "General Manager",
@@ -42,6 +61,18 @@
                 "duty": "Business Development Manager",
                 "photo": "./img/staff/Lance_1.jpg",
                 "hover": "./img/staff/Lance_2.jpg",
+                "region": ""
+            }
+        ]
+    },
+    {
+        "team": "Executive Support",
+        "list": [
+            {
+                "name": "Cecelia",
+                "duty": "Executive Assistant",
+                "photo": "./img/staff/cecelia.jpg",
+                "hover": "./img/staff/cecelia.jpg",
                 "region": ""
             }
         ]
@@ -92,23 +123,10 @@
                 "region": ""
             },
             {
-                "name": "Filipe",
-                "duty": "Project Supervisor",
-                "photo": "./img/staff/Filipe_01.jpg",
-                "hover": "./img/staff/Filipe_02.jpg",
-                "region": ""
-            },
-            {
                 "name": "Hamish",
                 "duty": "Project Supervisor",
                 "photo": "./img/staff/Hamish_01.jpg",
                 "hover": "./img/staff/Hamish_02.jpg",
-                "region": ""
-            },
-            {
-                "name": "Karlos",
-                "duty": "Project Supervisor",
-                "photo": "./img/staff/Karlos_01.jpg",
                 "region": ""
             },
             {
@@ -156,7 +174,7 @@
             {
                 "name": "Diego",
                 "duty": "Leading Hand",
-                "photo": "./img/staff/Diego_01.jpg",
+                "photo": "./img/staff/diego.jpg",
                 "hover": "./img/staff/Diego_02.jpg",
                 "region": ""
             },
@@ -197,11 +215,18 @@
                 "photo": "./img/staff/Sean.l_01.jpg",
                 "hover": "./img/staff/Sean.l_02.jpg",
                 "region": "Wellington"
+            },
+                        {
+                "name": "Filipe",
+                "duty": "Project Supervisor",
+                "photo": "./img/staff/Filipe_01.jpg",
+                "hover": "./img/staff/Filipe_02.jpg",
+                "region": ""
             }
         ]
     },
     {
-        "team": "Pricing",
+        "team": "Estimating and Quantity Surveying",
         "list": [
             {
                 "name": "Yuri",
@@ -253,17 +278,17 @@
                 "region": ""
             },
             {
+                "name": "Jaron",
+                "duty": "Quantity Surveyor",
+                "photo": "./img/staff/jaron.jpg",
+                "hover": "./img/staff/jaron.jpg",
+                "region": ""
+            },
+            {
                 "name": "Joshua",
                 "duty": "Quantity Surveyor",
                 "photo": "./img/staff/Joshua_01.jpg",
                 "hover": "./img/staff/Joshua_02.jpg",
-                "region": ""
-            },
-            {
-                "name": "Sean",
-                "duty": "Quantity Surveyor",
-                "photo": "./img/staff/Sean.m_01.jpg",
-                "hover": "./img/staff/Sean.m_02.jpg",
                 "region": ""
             },
             {
@@ -281,15 +306,15 @@
             {
                 "name": "Eliza",
                 "duty": "Accounts Administrator",
-                "photo": "./img/staff/Eliza_01.jpg",
-                "hover": "./img/staff/Eliza_02.jpg",
+                "photo": "./img/staff/eliza.jpg",
+                "hover": "./img/staff/eliza.jpg",
                 "region": ""
             },
             {
-                "name": "Tati",
+                "name": "Roberta",
                 "duty": "Administrative Assistant",
-                "photo": "./img/staff/Tati_01.jpg",
-                "hover": "./img/staff/Tati_02.jpg",
+                "photo": "./img/staff/roberta.jpg",
+                "hover": "./img/staff/roberta.jpg",
                 "region": ""
             },
             {

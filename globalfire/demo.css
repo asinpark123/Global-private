@@ -40,6 +40,13 @@ body,
 button{
     font-family: "Manrope", Helvetica, sans-serif !important;
 }
+.blur{
+    position: relative;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1;
+    pointer-events: none;
+}
 .container {
     margin: 0;
     padding: 0;
@@ -141,10 +148,9 @@ section.mobile {
 }
 .hamburger img{
     height: 40px;
-    pointer-events: all;
+    pointer-events: none;
     position: absolute;
     right: 2%;
-    z-index: 3;
 }
 .hamburgerClose{
     height: 40px;
@@ -234,6 +240,7 @@ section p{
     letter-spacing: 1.125px;
     font-size: 4.6em;
     font-weight: 300;
+    text-shadow: 1px 1px 5px black;
     /* text-shadow: 0px 0px 10px black;
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
@@ -441,6 +448,16 @@ img.expandIcon {
     cursor: pointer;
     z-index: 2;
 }
+@keyframes bounce-button {
+    0% {bottom:0;}
+    50% {bottom:10px;}
+    100% {bottom:0;}
+}
+img.expandIcon.active {
+    animation-name: bounce-button;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+}
 .services.mobile{
     opacity: 1 !important;
 }
@@ -523,7 +540,8 @@ video{
 }
 .owl-carousel .item{
     position: relative;
-    width: 100%;
+    /* width: 100%; */
+    max-width: 90vw;
     min-width: 400px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -556,6 +574,7 @@ video{
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
     opacity: 0;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     /* ideally, transition speed should match zoom duration */
     -webkit-transition: all 0.3s ease-out;
@@ -644,6 +663,18 @@ video{
     margin: auto;
     width: 100%;
 }
+/* .staffContainer.director{
+    opacity: 0;
+    max-height: 0px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+.staffContainer.director.active{
+    opacity: 1;
+    max-height: 100vh;
+} */
 .staff{
     /* display: inline-block;
     position: relative; */
@@ -678,20 +709,18 @@ video{
     background-color: rgba(244, 121, 32, 0.8);
 }
 
-#Group h4:nth-of-type(1){
+
+#Group h4{
     font-weight: 400;
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 0px;
-    color: #7fcb2b;
 }
-#Group h4:nth-of-type(2){
-    margin:0px;
-}
-.glInfo{
+.group{
     display: flex;
     flex-direction: row;
+    margin-bottom: 5vh;
 }
-.glInfoText{
+.groupInfoText{
     width: 45%;
     padding-right: 1%;
     font-size: .8em;
@@ -699,11 +728,11 @@ video{
     flex-direction: column;
     justify-content: center;
 }
-.glInfoText .subtitle {
+.groupInfoText .subtitle {
     margin-bottom: 0;
 }
-.glInfoText .subtitle a{
-    color: #7fcb2b;
+.groupInfoText .subtitle a{
+    color: #f47920;
     font-weight: 400;
     text-decoration: none;
     pointer-events: all;
@@ -713,25 +742,43 @@ video{
     -o-transition: margin-left 0.5s;
     transition: margin-left 0.5s;
 }
-.glInfoText .subtitle a:hover{
+.group:nth-of-type(1) .groupInfoText .subtitle a,
+.group:nth-of-type(1) h4 {
+    color: #f47920;
+}
+.group:nth-of-type(2) .groupInfoText .subtitle a,
+.group:nth-of-type(2) h4 {
+    color: #7FCB2C
+}
+.group:nth-of-type(3) .groupInfoText .subtitle a,
+.group:nth-of-type(3) h4 {
+    color: #ED1B24
+}
+.groupInfoText .subtitle a:hover{
     margin-left: 10px;
 }
-.glInfoText svg{
+.groupInfoText svg{
     height: 24px;
     position: relative;
     bottom: -4px;
 }
-.glInfo .imageContainer{
+.group .imageContainer{
     margin: auto;
-    width: 55%;
+    width: 50%;
     position: relative;
     z-index: 2;
     display: flex;
-    justify-content: center;
     pointer-events: none;
 }
-.glInfo .imageContainer img{
-    height: 100%;
+.justifyLeft{
+    justify-content: left;
+}
+.justifyRight{
+    justify-content: right;
+}
+.group .imageContainer img{
+    width: 90%;
+    text-align: center;
 }
 
 #Contact .contactInfo{
@@ -765,6 +812,7 @@ video{
     position: relative;
     border: 1px solid #9a9a9a;
     z-index: 2;
+    pointer-events: all;
 }
 .mapContainer{
     margin-bottom: 5vh;

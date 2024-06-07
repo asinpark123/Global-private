@@ -154,7 +154,7 @@ var behavior = {
 
   /* Fluid Color */
   // fluid_color: [[0, 0, 0], [.4, .2, 0]],
-  fluid_color: [[244, 121, 32], [.4, .2, 0]],
+  fluid_color: [[244, 32, 32], [.8, .2, 0]],
 
 
   /* Characteristics */
@@ -1213,9 +1213,9 @@ function activator(canvas, webGL, colorFormat, PROGRAMS, pointers) {
 
   function generateColor() {
     var c = HSVtoRGB(Math.random(), 1.0, 1.0);
-    c.r *= 0.16;
-    c.g *= 0.3;
-    c.b *= 0.05;
+    c.r *= 0.7;
+    c.g *= 0.1;
+    c.b *= 0.01;
     // c.r *= 0.15;
     // c.g *= 0.15;
     // c.b *= 0.15;

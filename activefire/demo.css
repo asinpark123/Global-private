@@ -11,6 +11,9 @@ body {
 .textCenter{
     text-align: center !important;
 }
+.marginBottom10vh{
+    margin-bottom: 10vh;
+}
 .pointable{
     pointer-events: all;
 }
@@ -28,6 +31,9 @@ body {
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1;
+}
+#logo img{
+    padding: 10px
 }
 body {
     margin: 0;
@@ -129,8 +135,8 @@ section.mobile {
 }
 .navbar-flat li a:hover,
 .navbar li a:hover{
-    color: #7fcb2b !important;
-    border-bottom: 2px solid #7fcb2b;
+    color: #ED1B24 !important;
+    border-bottom: 2px solid #ED1B24;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
@@ -139,6 +145,7 @@ section.mobile {
 .hamburger{
     height: 40px;
     opacity: 0.0;
+    z-index: -1;
     -webkit-transition: opacity 0.3s;
     -moz-transition: opacity 0.3s;
     -o-transition: opacity 0.3s;
@@ -172,14 +179,19 @@ section.mobile {
 #GlobalPortal,
 #Projects,
 #Team,
+#WhyUs,
 #Group,
 #Contact{
     scroll-margin-top: 10vh;
     scroll-snap-align: start;
 }
+#Projects,
+#Team{
+    display: none;
+}
 .navMenu.current {
-    color: #7fcb2b !important;
-    border-bottom: 2px solid #7fcb2b;
+    color: #ED1B24 !important;
+    border-bottom: 2px solid #ED1B24;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
@@ -229,7 +241,7 @@ section ul>li{
     font-weight: 200;
 }
 section ul>li::marker{
-    color: #7fcb2b;
+    color: #ED1B24;
 }
 section p{
     text-align: initial;
@@ -275,11 +287,11 @@ section p{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
     z-index: 2;
 }
-.subtitle-green {
+.subtitle-red {
     text-align: initial;
     position: relative;
     pointer-events: none;
-    color: #7fcb2b;
+    color: #ED1B24;
     margin-top: 10vh;
     margin-bottom: 0vh;
     letter-spacing: 1.125px;
@@ -298,11 +310,11 @@ section p{
     margin: 4vh 0;
     font-size: 4em;
     font-weight: 300;
-    color: #7fcb2b;
+    color: #ED1B24;
     z-index: 2;
 }
 #Home{
-    padding-top: 15vh;
+    padding-top: 10vh;
 }
 #nzmap{
     position: absolute;
@@ -343,6 +355,9 @@ canvas {
     position: relative;
     display: flex;
     flex-direction: row;
+}
+.aboutUs .subsection ul{
+    margin: 0 auto;
 }
 .aboutUs .subsection p {
     width: 60%;
@@ -451,16 +466,44 @@ img.expandIcon {
     cursor: pointer;
     z-index: 2;
 }
+@keyframes bounce-button {
+    0% {bottom:0;}
+    50% {bottom:10px;}
+    100% {bottom:0;}
+}
+img.expandIcon.active {
+    animation-name: bounce-button;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+}
 .services.mobile{
     opacity: 1 !important;
 }
-.services .subtitle-green:nth-of-type(1){
-    margin-top: 0vh;
-}
-.services .subtitle-green{
+.services .subtitle-red{
     width: fit-content;
     float: left;
 }
+.services .subtitle-red:nth-of-type(1){
+    margin-top: 0vh;
+}
+/* .services:nth-of-type(1) .subtitle-red{
+    left: calc(100% / 6 * 0);
+}
+.services:nth-of-type(2) .subtitle-red{
+    left: calc(100% / 6 * 1);
+}
+.services:nth-of-type(3) .subtitle-red{
+    left: calc(100% / 6 * 2);
+}
+.services:nth-of-type(4) .subtitle-red{
+    left: calc(100% / 6 * 3);
+}
+.services:nth-of-type(5) .subtitle-red{
+    left: calc(100% / 6 * 4);
+}
+.services:nth-of-type(6) .subtitle-red{
+    left: calc(100% / 6 * 5);
+} */
 .services p{
     position: relative;
     opacity: 0 !important;
@@ -592,6 +635,7 @@ video{
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
     opacity: 0;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     /* ideally, transition speed should match zoom duration */
     -webkit-transition: all 0.3s ease-out;
@@ -659,7 +703,7 @@ video{
     font-size: 1.7em;
 }
 .jobCategory{
-    color: #7fcb2b !important;
+    color: #ED1B24 !important;
     font-size: 2em;
     text-align: center;
 }
@@ -714,20 +758,17 @@ video{
     background-color: rgba(127, 203, 43, 0.8)
 }
 
-#Group h4:nth-of-type(1){
+#Group h4{
     font-weight: 400;
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 0px;
-    color: #f47920;
 }
-#Group h4:nth-of-type(2){
-    margin:0px;
-}
-.gfInfo{
+.group{
     display: flex;
     flex-direction: row;
+    margin-bottom: 5vh;
 }
-.gfInfoText{
+.groupInfoText{
     width: 45%;
     padding-right: 1%;
     font-size: .8em;
@@ -735,10 +776,10 @@ video{
     flex-direction: column;
     justify-content: center;
 }
-.gfInfoText .subtitle {
+.groupInfoText .subtitle {
     margin-bottom: 0;
 }
-.gfInfoText .subtitle a{
+.groupInfoText .subtitle a{
     color: #f47920;
     font-weight: 400;
     text-decoration: none;
@@ -749,25 +790,43 @@ video{
     -o-transition: margin-left 0.5s;
     transition: margin-left 0.5s;
 }
-.gfInfoText .subtitle a:hover{
+.group:nth-of-type(1) .groupInfoText .subtitle a,
+.group:nth-of-type(1) h4 {
+    color: #f47920;
+}
+.group:nth-of-type(2) .groupInfoText .subtitle a,
+.group:nth-of-type(2) h4 {
+    color: #7FCB2C
+}
+.group:nth-of-type(3) .groupInfoText .subtitle a,
+.group:nth-of-type(3) h4 {
+    color: #ED1B24
+}
+.groupInfoText .subtitle a:hover{
     margin-left: 10px;
 }
-.gfInfoText svg{
+.groupInfoText svg{
     height: 24px;
     position: relative;
     bottom: -4px;
 }
-.gfInfo .imageContainer{
+.group .imageContainer{
     margin: auto;
-    width: 55%;
+    width: 50%;
     position: relative;
     z-index: 2;
     display: flex;
-    justify-content: center;
     pointer-events: none;
 }
-.gfInfo .imageContainer img{
-    height: 100%;
+.justifyLeft{
+    justify-content: left;
+}
+.justifyRight{
+    justify-content: right;
+}
+.group .imageContainer img{
+    width: 90%;
+    text-align: center;
 }
 
 #Contact .contactInfo{
@@ -783,7 +842,7 @@ video{
     flex-direction: column;
     justify-content: center;
 }
-.contactInfoText .subtitle-green{
+.contactInfoText .subtitle-red{
     margin: 0;
     padding-top: 10px;
 }
@@ -801,6 +860,7 @@ video{
     position: relative;
     border: 1px solid #9a9a9a;
     z-index: 2;
+    pointer-events: all;
 }
 .mapContainer{
     margin-bottom: 5vh;
@@ -840,7 +900,7 @@ video{
     width: 80%;
     padding: 20px 0;
     margin-top: 0;
-    border-top: 1px solid #7fcb2b;
+    border-top: 1px solid #ED1B24;
 }
 ul.association-list li{
     width: 20%;
@@ -869,8 +929,8 @@ ul.association-list li img{
     transition: border-bottom, color 0.5s;
 }
 .footerRight ul.bottom-nav li:hover{
-    border-bottom: 2px solid #7fcb2b;
-    color: #7fcb2b;
+    border-bottom: 2px solid #ED1B24;
+    color: #ED1B24;
 }
 
 .footerBottom{

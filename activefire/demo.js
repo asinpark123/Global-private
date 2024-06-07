@@ -43,9 +43,12 @@ function headerBGfade() {
 let services = document.getElementsByClassName("services");
 let servicesSection = document.getElementById("Services");
 let servicesHR = document.querySelectorAll(".services hr");
+let expandIcons = document.querySelectorAll("img.expandIcon");
+let serviceDescriptions = document.querySelectorAll(".services p");
 for (let i = 0; i < services.length; i++) {
 	services[i].addEventListener("mouseenter", function () {
 		services[i].classList.add("active")
+		expandIcons[i].classList.add("active");
 		// services[i].style.opacity = 1;
 		// services[i].style.pointerEvents = "none";
 		// services[i].style.transitionDelay = "0.0s";
@@ -53,6 +56,7 @@ for (let i = 0; i < services.length; i++) {
 	});
 	services[i].addEventListener("mouseleave", function () {
 		services[i].classList.remove("active");
+		expandIcons[i].classList.remove("active");
 		// services[i].style.opacity = 0.4;
 		// services[i].style.pointerEvents = "auto";
 		// services[i].style.transitionDelay = "0.2s";
@@ -60,17 +64,13 @@ for (let i = 0; i < services.length; i++) {
 	});
 	servicesSection.addEventListener("mouseenter", function () {
 		services[i].classList.remove("active");
+		expandIcons[i].classList.remove("active");
 		// services[i].style.opacity = 0.4;
 		// services[i].style.pointerEvents = "auto";
 		// services[i].style.transitionDelay = "0.2s";
 		// services[i].style.transition = "2s";
 	});
-}
-let expandIcons = document.querySelectorAll("img.expandIcon");
-let serviceDescriptions = document.querySelectorAll(".services p");
-
-for (let i = 0; i< expandIcons.length;i++){
-	expandIcons[i].addEventListener("click", function(){
+	services[i].addEventListener("click", function(){
 		if(!serviceDescriptions[i].classList.contains("active")){
 			for(let serviceDescription of serviceDescriptions){
 				serviceDescription.classList.remove("active")
@@ -80,7 +80,6 @@ for (let i = 0; i< expandIcons.length;i++){
 			serviceDescriptions[i].classList.remove("active");
 		}
 	});
-	
 }
 
 // let scroller = new LocomotiveScroll({
@@ -187,42 +186,42 @@ $(document).ready(function () {
 // AOS
 // fetch People JSON
 let teamData, i, j, photoSrc, staffName, jobTitle, title;
-fetch("./people.json")
-	.then((response) => response.json())
-	.then((json) => {
-		teamData = json;
-		for (i = 0; i < teamData.length; i++) {
-			title = teamData[i].team;
-			const $jobCategory = $('<div class="jobCategoryContainer"></div>');
-			const $jobCategoryTitle = $(`<h4 class="jobCategory">${title}</h4>`);
-			const $staffContainer = $('<div class="staffContainer"></div>');
-			for (j = 0; j < teamData[i].list.length; j++) {
-				// const $staff = $(`<div class="staff" data-aos="fade-right" data-aos-delay="${(j / i) * 200}"></div>`); // commented out for hiding team tab
-				const $staff = $(
-					`<div class="staff" data-aos="fade-right" data-aos-delay="${(j/2) * 200}"></div>`
-				);
-				$staffContainer.append($staff);
-				photoSrc = teamData[i].list[j].photo;
-				staffName = teamData[i].list[j].name;
-				jobTitle = teamData[i].list[j].duty;
-				const $staffPhoto = $(
-					`<div class=imageContainer><img src="${photoSrc}" alt="${staffName}"></div>`
-				);
-				const $staffInfo = $('<div class="staffInfo"></div>');
-				$staffPhoto.append($staffInfo);
-				$staff.append($staffPhoto);
-				const $staffName = $(`<div class="name">${staffName}</div>`);
-				const $staffJobTitle = $(
-					`<div class="jobTitle"><i>${jobTitle}</i></div>`
-				);
-				$staffInfo.append($staffName, $staffJobTitle);
-			}
-			$jobCategory.append($jobCategoryTitle, $staffContainer);
-			$(".tabContent").append($jobCategory);
+// fetch("./people.json")
+// 	.then((response) => response.json())
+// 	.then((json) => {
+// 		teamData = json;
+// 		for (i = 0; i < teamData.length; i++) {
+// 			title = teamData[i].team;
+// 			const $jobCategory = $('<div class="jobCategoryContainer"></div>');
+// 			const $jobCategoryTitle = $(`<h4 class="jobCategory">${title}</h4>`);
+// 			const $staffContainer = $('<div class="staffContainer"></div>');
+// 			for (j = 0; j < teamData[i].list.length; j++) {
+// 				// const $staff = $(`<div class="staff" data-aos="fade-right" data-aos-delay="${(j / i) * 200}"></div>`); // commented out for hiding team tab
+// 				const $staff = $(
+// 					`<div class="staff" data-aos="fade-right" data-aos-delay="${(j/2) * 200}"></div>`
+// 				);
+// 				$staffContainer.append($staff);
+// 				photoSrc = teamData[i].list[j].photo;
+// 				staffName = teamData[i].list[j].name;
+// 				jobTitle = teamData[i].list[j].duty;
+// 				const $staffPhoto = $(
+// 					`<div class=imageContainer><img src="${photoSrc}" alt="${staffName}"></div>`
+// 				);
+// 				const $staffInfo = $('<div class="staffInfo"></div>');
+// 				$staffPhoto.append($staffInfo);
+// 				$staff.append($staffPhoto);
+// 				const $staffName = $(`<div class="name">${staffName}</div>`);
+// 				const $staffJobTitle = $(
+// 					`<div class="jobTitle"><i>${jobTitle}</i></div>`
+// 				);
+// 				$staffInfo.append($staffName, $staffJobTitle);
+// 			}
+// 			$jobCategory.append($jobCategoryTitle, $staffContainer);
+// 			$(".tabContent").append($jobCategory);
 			
-		}
-		AOS.init();
-	});
+// 		}
+// 		AOS.init();
+// 	});
 
 let menu = document.getElementById("navbar");
 hamburgerButton = document.querySelector(".hamburger");
@@ -246,10 +245,11 @@ let ServicesY;
 let GlobalPortalY;
 let ProjectsY;
 let TeamY;
+let WhyUsY;
 let GroupY;
 let ContactY;
 // let TeamListY;
-let detectionPadding = 250;
+let detectionPadding = 300;
 
 let navMenus = document.querySelectorAll(".navMenu");
 function sectionTracker() {
@@ -279,7 +279,7 @@ function sectionTracker() {
 			}
 			navMenus[i].classList.remove("current");
 		}
-	} else if (yOffset > GlobalPortalY && yOffset < ProjectsY) {
+	} else if (yOffset > GlobalPortalY && yOffset < WhyUsY) {
 		navMenus[3].classList.add("current");
 		for (i = 0; i < navMenus.length; i++) {
 			if (i == 3) {
@@ -287,7 +287,48 @@ function sectionTracker() {
 			}
 			navMenus[i].classList.remove("current");
 		}
-	} else if (yOffset > ProjectsY && yOffset < TeamY) {
+		// } else if (yOffset > GlobalPortalY && yOffset < ProjectsY) {
+		// 	navMenus[3].classList.add("current");
+		// 	for (i = 0; i < navMenus.length; i++) {
+		// 		if (i == 3) {
+		// 			continue;
+		// 		}
+		// 		navMenus[i].classList.remove("current");
+		// 	}
+		// } else if (yOffset > ProjectsY && yOffset < TeamY) {
+		// 	navMenus[4].classList.add("current");
+		// 	for (i = 0; i < navMenus.length; i++) {
+		// 		if (i == 4) {
+		// 			continue;
+		// 		}
+		// 		navMenus[i].classList.remove("current");
+		// 	}
+		// } else if (yOffset > TeamY && yOffset < GroupY) {
+		// 	navMenus[5].classList.add("current");
+		// 	for (i = 0; i < navMenus.length; i++) {
+		// 		if (i == 5) {
+		// 			continue;
+		// 		}
+		// 		navMenus[i].classList.remove("current");
+		// 	}
+		// } else if (yOffset > GroupY && yOffset < ContactY) {
+		// 	navMenus[6].classList.add("current");
+		// 	for (i = 0; i < navMenus.length; i++) {
+		// 		if (i == 6) {
+		// 			continue;
+		// 		}
+		// 		navMenus[i].classList.remove("current");
+		// 	}
+		// } else if (yOffset > ContactY) {
+		// 	navMenus[7].classList.add("current");
+		// 	for (i = 0; i < navMenus.length; i++) {
+		// 		if (i == 7) {
+		// 			continue;
+		// 		}
+		// 		navMenus[i].classList.remove("current");
+		// 	}
+		// }
+	} else if (yOffset > WhyUsY && yOffset < GroupY) {
 		navMenus[4].classList.add("current");
 		for (i = 0; i < navMenus.length; i++) {
 			if (i == 4) {
@@ -295,7 +336,7 @@ function sectionTracker() {
 			}
 			navMenus[i].classList.remove("current");
 		}
-	} else if (yOffset > TeamY && yOffset < GroupY) {
+	} else if (yOffset > GroupY && yOffset < ContactY) {
 		navMenus[5].classList.add("current");
 		for (i = 0; i < navMenus.length; i++) {
 			if (i == 5) {
@@ -303,18 +344,10 @@ function sectionTracker() {
 			}
 			navMenus[i].classList.remove("current");
 		}
-	} else if (yOffset > GroupY && yOffset < ContactY) {
+	} else if (yOffset > ContactY) {
 		navMenus[6].classList.add("current");
 		for (i = 0; i < navMenus.length; i++) {
 			if (i == 6) {
-				continue;
-			}
-			navMenus[i].classList.remove("current");
-		}
-	} else if (yOffset > ContactY) {
-		navMenus[7].classList.add("current");
-		for (i = 0; i < navMenus.length; i++) {
-			if (i == 7) {
 				continue;
 			}
 			navMenus[i].classList.remove("current");
@@ -327,10 +360,9 @@ function resizeOnScroll(){
 	let GlobalPortal = document.getElementById("GlobalPortal")
 	let GlobalPortalEnd = GlobalPortal.offsetTop + GlobalPortal.offsetHeight;
 	let insetRatioX = (-scrollY * 100) / GlobalPortalEnd + 67;
-	if (yOffset+700 > GlobalPortalY && yOffset < ProjectsY) {
+	if (yOffset + 700 > GlobalPortalY && yOffset < WhyUsY) {
 		ppVideo.style.clipPath = `inset(0 ${insetRatioX}% 0)`;
-	}
-	else{
+	} else {
 		ppVideo.style.clipPath = `inset(0 50% 0)`;
 	}
 }
@@ -453,6 +485,7 @@ window.addEventListener("resize", (event) => {
 	GlobalPortalY = document.getElementById("GlobalPortal").offsetTop;
 	ProjectsY = document.getElementById("Projects").offsetTop;
 	TeamY = document.getElementById("Team").offsetTop;
+	WhyUsY = document.getElementById("WhyUs").offsetTop;
 	GroupY = document.getElementById("Group").offsetTop;
 	ContactY = document.getElementById("Contact").offsetTop;
 });
@@ -465,6 +498,7 @@ window.onload = (event) => {
 	GlobalPortalY = document.getElementById("GlobalPortal").offsetTop;
 	ProjectsY = document.getElementById("Projects").offsetTop;
 	TeamY = document.getElementById("Team").offsetTop;
+	WhyUsY = document.getElementById("WhyUs").offsetTop;
 	GroupY = document.getElementById("Group").offsetTop;
 	ContactY = document.getElementById("Contact").offsetTop;
 	myFluid.activate();

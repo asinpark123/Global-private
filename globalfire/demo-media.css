@@ -27,13 +27,17 @@
         max-width: 95% !important;
         padding: 2% 2.5% !important;
     }
-    .glInfo {
+    .group {
         flex-direction: column-reverse;
     }
-    .glInfoText{
-        width: 100%;
+    .groupInfo {
+        flex-direction: column-reverse;
     }
-    .glInfo .imageContainer{
+    .groupInfoText{
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+    .group .imageContainer{
         width: 100%;
     }
     #Contact .contactInfo{
@@ -64,9 +68,9 @@
     ul.association-list li p {
         font-size: 2vw !important;
     }
-    ul.association-list li:last-of-type {
+    /* ul.association-list li:last-of-type {
         margin: auto;
-    }
+    } */
     .footerRight{
         width: 100%;
         display: initial;
@@ -167,6 +171,9 @@
     .hamburger{
         opacity: 1;
     }
+    .hamburger img{
+        pointer-events: all;
+    }
     .hamburger.active{
         opacity: 0;
     }
@@ -208,9 +215,15 @@
     }
     ul.association-list li {
         width: 31.6%;
+        margin: 0 auto;
     }
     ul.association-list li p {
         font-size: 1.5vw;
+    }
+
+    .owl-carousel .owl-item img{
+        width: initial !important;
+        margin: auto;
     }
 
 }

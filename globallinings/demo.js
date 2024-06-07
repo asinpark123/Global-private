@@ -43,9 +43,12 @@ function headerBGfade() {
 let services = document.getElementsByClassName("services");
 let servicesSection = document.getElementById("Services");
 let servicesHR = document.querySelectorAll(".services hr");
+let expandIcons = document.querySelectorAll("img.expandIcon");
+let serviceDescriptions = document.querySelectorAll(".services p");
 for (let i = 0; i < services.length; i++) {
 	services[i].addEventListener("mouseenter", function () {
 		services[i].classList.add("active")
+		expandIcons[i].classList.add("active");
 		// services[i].style.opacity = 1;
 		// services[i].style.pointerEvents = "none";
 		// services[i].style.transitionDelay = "0.0s";
@@ -53,6 +56,7 @@ for (let i = 0; i < services.length; i++) {
 	});
 	services[i].addEventListener("mouseleave", function () {
 		services[i].classList.remove("active");
+		expandIcons[i].classList.remove("active");
 		// services[i].style.opacity = 0.4;
 		// services[i].style.pointerEvents = "auto";
 		// services[i].style.transitionDelay = "0.2s";
@@ -60,17 +64,13 @@ for (let i = 0; i < services.length; i++) {
 	});
 	servicesSection.addEventListener("mouseenter", function () {
 		services[i].classList.remove("active");
+		expandIcons[i].classList.remove("active");
 		// services[i].style.opacity = 0.4;
 		// services[i].style.pointerEvents = "auto";
 		// services[i].style.transitionDelay = "0.2s";
 		// services[i].style.transition = "2s";
 	});
-}
-let expandIcons = document.querySelectorAll("img.expandIcon");
-let serviceDescriptions = document.querySelectorAll(".services p");
-
-for (let i = 0; i< expandIcons.length;i++){
-	expandIcons[i].addEventListener("click", function(){
+	services[i].addEventListener("click", function(){
 		if(!serviceDescriptions[i].classList.contains("active")){
 			for(let serviceDescription of serviceDescriptions){
 				serviceDescription.classList.remove("active")
@@ -80,7 +80,6 @@ for (let i = 0; i< expandIcons.length;i++){
 			serviceDescriptions[i].classList.remove("active");
 		}
 	});
-	
 }
 
 // let scroller = new LocomotiveScroll({
@@ -123,13 +122,13 @@ $(document).ready(function () {
 
 // simpleParallax 5.6.2
 $(document).ready(function () {
-	let carouselImages = document.querySelectorAll(".owl-carousel .imgWindow img");
+	// let carouselImages = document.querySelectorAll(".owl-carousel .imgWindow img");
 	let aboutUsImg = document.querySelectorAll("#AboutUs .subsection img");
 	let portalImg = document.querySelectorAll("#GlobalPortal .img-container img");
 	// let glImage = document.querySelectorAll(".glInfo .imageContainer img");
-	new simpleParallax(carouselImages, {
-		scale: 1.2,
-	});
+	// new simpleParallax(carouselImages, {
+	// 	scale: 1.2,
+	// });
 	new simpleParallax(aboutUsImg, {
 		scale: 1.3,
 	});
@@ -227,12 +226,14 @@ fetch("./people.json")
 let menu = document.getElementById("navbar");
 hamburgerButton = document.querySelector(".hamburger");
 closeButton = document.querySelector(".hamburgerClose img");
-function hamburgerMenuOpen() {
+function hamburgerMenuOpen(e) {
+	e?.preventDefault()
 	menu.classList.add("mobile");
 	closeButton.classList.add("active");
 	hamburgerButton.classList.add("active");
 }
-function hamburgerMenuClose() {
+function hamburgerMenuClose(e) {
+	e?.preventDefault();
 	menu.classList.remove("mobile");
 	closeButton.classList.remove("active");
 	hamburgerButton.classList.remove("active");

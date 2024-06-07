@@ -27,13 +27,17 @@
         max-width: 95% !important;
         padding: 2% 2.5% !important;
     }
-    .gfInfo {
+    .group {
         flex-direction: column-reverse;
     }
-    .gfInfoText{
-        width: 100%;
+    .groupInfo {
+        flex-direction: column-reverse;
     }
-    .gfInfo .imageContainer{
+    .groupInfoText{
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+    .group .imageContainer{
         width: 100%;
     }
     #Contact .contactInfo{
@@ -95,6 +99,11 @@
 
     #nzmap {
         display: none;
+    }
+
+    .blur{
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .services p {
@@ -163,6 +172,9 @@
     .hamburger{
         opacity: 1;
     }
+    .hamburger img{
+        pointer-events: all;
+    }
     .hamburger.active{
         opacity: 0;
     }
@@ -226,6 +238,7 @@
 
     .owl-carousel .owl-item img{
         width: initial !important;
+        margin: auto;
     }
 
 }

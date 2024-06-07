@@ -11,10 +11,14 @@
         font-size: calc(1em + 2.5vw) !important
     }
 
+    .img-container{
+        max-width: 95%;
+        max-height: 95%;
+    }
     .services{
         width: 100%;
     }
-    .services .subtitle-green{
+    .services .subtitle-red{
         font-size: 1.7em;
     }
     img.expandIcon{
@@ -27,13 +31,25 @@
         max-width: 95% !important;
         padding: 2% 2.5% !important;
     }
-    .gfInfo {
+
+    /* .group:nth-of-type(1),
+    .group:nth-of-type(3) {
+        flex-direction: column;
+    }
+    .group:nth-of-type(2){
+        flex-direction: column-reverse;
+    } */
+    .group {
         flex-direction: column-reverse;
     }
-    .gfInfoText{
-        width: 100%;
+    .groupInfo {
+        flex-direction: column-reverse;
     }
-    .gfInfo .imageContainer{
+    .groupInfoText{
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+    .group .imageContainer{
         width: 100%;
     }
     #Contact .contactInfo{
@@ -44,6 +60,10 @@
     }
     .footerContainer {
         flex-direction: column;
+    }
+    .justifyRight,
+    .justifyLeft {
+        justify-content: center !important;
     }
     .footerLeft{
         margin: auto;
@@ -162,6 +182,7 @@
     }
     .hamburger{
         opacity: 1;
+        z-index: 1;
     }
     .hamburger.active{
         opacity: 0;
@@ -180,11 +201,13 @@
         transition: right 0.3s ease;
     }
 
-    
     .aboutUs .subsection:nth-of-type(1) {
         flex-direction: column;
     }
     .aboutUs .subsection:nth-of-type(2) {
+        flex-direction: column;
+    }
+    .aboutUs .subsection:nth-of-type(3) {
         flex-direction: column-reverse;
     }
     .aboutUs .subsection .img-container {
@@ -197,7 +220,7 @@
     .aboutUs .subsection img{
         margin-bottom: 5vh;
     }
-    .aboutUs .subtitle-green{
+    .aboutUs .subtitle-red{
         margin-top: 0;
     }
 
