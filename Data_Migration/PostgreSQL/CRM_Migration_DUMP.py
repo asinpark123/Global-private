@@ -3,7 +3,8 @@ import datetime
 
 # Connect to an existing database
 # globalcore_local public schema connection
-with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N' host='localhost' port= '5432'") as conn:
+# with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N' host='localhost' port= '5432'") as conn:
+with psycopg.connect("dbname=globalcore user=alexpark password='an!mat10N' host='gl-db04.internal.gl.co.nz' port= '5432'") as conn:
     
     glEntity_gfResource = []
     gfResource_exists = ()
@@ -20,20 +21,22 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
     gfContact_info = []
     new_entityNotes = []
     defaultTime = datetime.time(9,00)
-    
+    glEntity_relationship = []
+    new_glEntity_gfContacts = []
+    nonexistant = []
     
     ## Adding client_id column and client_qs_entity to job_gf_job and adding Foerign Key association for new columns added to Job GF and setting client_id column as NOT NULL
     ## NOT NULL constraint have to run after all migration finished
-    with conn.cursor() as cur:
-        ## additonal columns in job_gf_job will be created by Alexander
-        # cur.execute("ALTER TABLE public.job_gf_job ADD client_id INTEGER")
-        # cur.execute("ALTER TABLE public.job_gf_job ADD client_qs_entity INTEGER")
-        ## commenting out LINK related part
-        # cur.execute("ALTER TABLE public.job_gf_job ADD CONSTRAINT fk_job_gf_job_client_id FOREIGN KEY (client_id) REFERENCES public.crm_gl_entity(id)")
-        # # cur.execute("ALTER TABLE public.job_gf_job ALTER COLUMN client_id SET NOT NULL")
-        # cur.execute("ALTER TABLE public.job_gf_job ADD CONSTRAINT fk_job_gf_job_client_qs_entity FOREIGN KEY (client_qs_entity) REFERENCES public.crm_gl_entity(id)")
-        cur.close()
-    conn.commit()
+    # with conn.cursor() as cur:
+    #     # additonal columns in job_gf_job will be created by Alexander
+    #     cur.execute("ALTER TABLE public.job_gf_job ADD client_id INTEGER")
+    #     cur.execute("ALTER TABLE public.job_gf_job ADD client_qs_entity INTEGER")
+    #     # commenting out LINK related part
+    #     cur.execute("ALTER TABLE public.job_gf_job ADD CONSTRAINT fk_job_gf_job_client_id FOREIGN KEY (client_id) REFERENCES public.crm_gl_entity(id)")
+    #     # cur.execute("ALTER TABLE public.job_gf_job ALTER COLUMN client_id SET NOT NULL")
+    #     cur.execute("ALTER TABLE public.job_gf_job ADD CONSTRAINT fk_job_gf_job_client_qs_entity FOREIGN KEY (client_qs_entity) REFERENCES public.crm_gl_entity(id)")
+    #     cur.close()
+    # conn.commit()
 
     with conn.cursor() as cur:
 ## Inserting entity id in client_id where GF resource's NZBN = GL Entity NZBN. Creates a txt file (glEntity_gfResource.txt) containing pairs of new entity ids to corresponding gfResource ids, also as list of tuples in new_glEntity_gfResource.
@@ -42,7 +45,7 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
 
         for record in cur:
             glEntity_gfResource += [(record[0],record[2])]
-        
+
         f = open("glEntity_gfResource.txt", "w")
         g = open("glEntity_gfResource_pt2.txt","w")
         for pairs in glEntity_gfResource:
@@ -53,7 +56,6 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
             g.write("(%s,%s)\n" % (pairs[0],pairs[1]))
         f.close()
         g.close()
-
 
 # gfResource_exists_str stores GF resource id's that exist in GL entity that does not have blank NZBN
         cur.execute("SELECT temp.resources_resource.id FROM public.crm_gl_entity INNER JOIN temp.resources_resource ON public.crm_gl_entity.nzbn = temp.resources_resource.NZBN WHERE public.crm_gl_entity.nzbn <> '' OR temp.resources_resource.NZBN <> '' ORDER BY public.crm_gl_entity.id ASC")
@@ -182,7 +184,7 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
                 cur.execute("INSERT INTO public.crm_gl_entityphonenumber(phone_number, current, entity_id) VALUES('%s', true, %s) RETURNING id" % (items[2], new_gfContacts_glEntity[items[0]]))
                 entityphonenumber_id_contacttype_id = cur.fetchone()[0]
                 cur.execute("INSERT INTO public.crm_gl_entityphonenumber_contact_types (entityphonenumber_id, contacttype_id) VALUES(%s,1)" % entityphonenumber_id_contacttype_id)
-            
+
         # Migrating ResourceNotes into EntityNotes, getting data from GF resourceNotes and from resources_resourcenote_assignee via INNER JOIN, converting resource ID to Entity ID by using gfResource_glEntity dict created earlier.
         cur.execute("SELECT temp.resources_resourcenote.added_date, temp.resources_resourcenote.note, temp.resources_resourcenote.resource_id, temp.resources_resourcenote_assignee.globaluser_id FROM temp.resources_resourcenote INNER JOIN temp.resources_resourcenote_assignee ON temp.resources_resourcenote.id = temp.resources_resourcenote_assignee.resourcenote_id ORDER BY temp.resources_resourcenote.id ASC")
         result_pt9 = cur.fetchall()
@@ -191,9 +193,29 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
             notes = results[1].replace("'","''")
             results_2 = gfResource_glEntity[results[2]]
             new_entityNotes += [(datetimeCombine,notes,results_2,results[3])]
-        
+
         for items in new_entityNotes:
             cur.execute("INSERT INTO public.crm_gl_entitynote(created, last_modified, pinned, note, creator_id, entity_id, last_modified_by_id) VALUES('%s','%s','false','%s',%s,%s,%s)" % (items[0],items[0],items[1],items[3],items[2],items[3]))
+
+    # Creating relatiohships for newly added entities in crm_gl_entityrelationshiplink. 1 "Client (Company)" = 4 "Client", 2 "Client (Individual)" = ignore, 3 "Supplier" = 5 "Merchant (Supplier)" AND 6 "Manufacturer / Distributor"
+    # Queries the database to retrieve Populates the list glEntity_relationship by converting resource id to entity id, and resource type to enetity relationship id
+        cur.execute("SELECT * FROM temp.resources_resource_resource_type ORDER BY id ASC")
+        resource_resource_type = cur.fetchall()
+        for result in resource_resource_type:
+            resource_id = result[1]
+            match result[2]:
+                case 1:
+                    relationship_id = 4
+                case 3:
+                    relationship_id = 5
+            if resource_id in gfResource_glEntity:
+                glEntity_relationship += [(gfResource_glEntity[resource_id],relationship_id)]
+            else:
+                nonexistant.append(resource_id)
+        for pair in glEntity_relationship:
+            entity_id = pair[0]
+            relationship_id = pair[1]
+            cur.execute("INSERT INTO public.crm_gl_entityrelationshiplink (start_date,pending,entity_id,relationship_id) VALUES('%s',%s,%d,%d)" % ('2023-08-04',False,entity_id,relationship_id))
 
         cur.close()
         # Make the changes to the database persistent

@@ -21,8 +21,8 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
     new_entityNotes = []
     defaultTime = datetime.time(9,00)
     
-    ## Adding client_id column and client_qs_entity to job_gf_job and adding Foerign Key association for new columns added to Job GF and setting client_id column as NOT NULL
-    ## NOT NULL constraint have to run after all migration finished
+    # Adding client_id column and client_qs_entity to job_gf_job and adding Foerign Key association for new columns added to Job GF and setting client_id column as NOT NULL
+    # NOT NULL constraint have to run after all migration finished
     with conn.cursor() as cur:
     ## additonal columns in job_gf_job will be created by Alexander, below add columns and FK constraints are only for testing
         cur.execute("ALTER TABLE public.job_gf_job ADD client_id INTEGER")
@@ -66,13 +66,10 @@ with psycopg.connect("dbname=globalcore_local user=postgres password='an!mat10N'
         for pairs in glEntity_gfResource:
             cur.execute("UPDATE public.job_gf_job SET client_id = %s WHERE resource = %s" % (pairs[0],pairs[1]))
 
-
-# commenting out LINK related part
 # updates job_gf_job's client_id from list of glEntity-gfResource tuples in new_glEntity_gfResource that hasn't been updated earlier (when updating GF jobs with already existing GF resources in GL entity)
         for item in new_glEntity_gfResource:
             cur.execute("UPDATE public.job_gf_job SET client_id = %s WHERE resource = %s AND client_id IS NULL" % (item[0],item[1]))
 
-## commenting out LINK related part
     # Inserts newly migrated contacts Entity id to client_qs_entity column where client_QS matches contact_id in new_glEntity_gfContacts. 'Default Contact' client_QS will be NULL in client_qs_entity
         for pairs in new_glEntity_gfContacts:
             cur.execute("UPDATE public.job_gf_job SET client_qs_entity = %s WHERE client_qs = %s" % (pairs[0],pairs[1]))
